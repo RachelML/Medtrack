@@ -81,9 +81,13 @@ MEDICATION component CRUD functionality
 - GET `/medications`
 - POST `/medications`
 - GET `/medications/:medid`
-- GET `/trips/:departure_city/:destination_city/:travel_date_begin`
 - PUT `/medications/:medid`
 - DELETE `/medications/:medid`
+
+- POST `/pharmacy`
+- GET `/pharmacy/:pharmid`
+- PUT `/pharmacy/:pharmid`
+- DELETE `/pharmacy/:phar,id`
 
 
 ## Priority Matrix
