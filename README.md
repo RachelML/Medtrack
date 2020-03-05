@@ -21,12 +21,12 @@ MedTrack MVP will allow a user to login and add medications and a pharmacy to th
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-|      Cors        | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Axios        | _Lorem ipsum dolor sit amet, consectetur._ |
-|  react-moment    | _Lorem ipsum dolor sit amet, consectetur._ |
-|  react-calenda   | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | react..                                    |
+|   React Router   | Routing in react                           |
+|      Cors        | Cors gem                                   |
+|     Axios        | fetch Api data                             |
+|  react-moment    | a library to easily display current dates  |
+|  react-calendar  | calendar library                           |
 
 
 
@@ -54,16 +54,16 @@ Breakdown the initial logic defined in the previous sections into stateful and s
 
 |  Component   | State | Description                                                      |
 | :----------: | :---: | :--------------------------------------------------------------- |
-|    Header    |   n   | _The header will contain the navigation and logo._               |
-|  Navigation  |   n   | _The navigation will provide a link to each of the pages._       |
-|   App        |   y   | _The gallery will render the posts using cards in flexbox._      |
-| Login        |   n   | _The cards will render the post info via props._                 |
-|    Register  |   n   | _The footer will show info about me and a link to my portfolio._ |
-|    MedList   |   n   | _The header will contain the navigation and logo._               |
-|  MedDetail   |   n   | _The navigation will provide a link to each of the pages._       |
-| PharmDetail  |   y   | _The gallery will render the posts using cards in flexbox._      |
-| CreateMed    |   n   | _The cards will render the post info via props._                 |
-|    EditMed   |   n   | _The footer will show info about me and a link to my portfolio._ |
+|    Header    |   n   | _The header will contain the navigation, logout and logo._        |
+|  Navigation  |   n   | _The navigation will provide a link to each of the pages and link to home page._       |
+|   App        |   y   | _The app will hold state and on change functions._      |
+|   Login      |   n   | _The login will render the login prompt._                 |
+|    Register  |   n   | _The registration will show the new user registration._ |
+|    MedList   |   n   | _The medlist will display the medication names and basic detail._               |
+|  MedDetail   |   y   | _The MedDetail will display all medication information and change state ._       |
+| PharmDetail  |   n   | _The gallery will render the posts using cards in flexbox._      |
+| CreateMed    |   n   | _The Create Med will allow user to Create medication _                 |
+|    EditMed   |   n   | _The Edit Med will allow user to edit medication info._ |
 
 
 ## MVP Server (Back End)
@@ -92,32 +92,29 @@ MEDICATION component CRUD functionality
 
 ## Timeframes
 
-Estimate the amount of time your team expects to spend on each area of your app
-
 | Component | Estimated Time | Actual Time |
 | --- | :---: | :---: |
-| css| 15hrs | 15 hrs |
-| backend set-up | 6hrs | 12 hrs |
-| Front-End Routing | 7hrs | 6 hrs |
-| setting up components | 5 hrs | 4 hrs |
-| connecting front and backend | 5 hrs | 10hrs |
-| Server | 4hrs | 6 hrs |
-| pseudocoding | 4hrs | 12 hrs |
-| troubleshooting | 4hrs |  20 hrs|
-| Total | hrs | 85 hrs |
+| css| 12hrs |  |
+| backend set-up | 6hrs | |
+| Front-End Routing | 7hrs | |
+| setting up components | 5 hrs |  |
+| connecting front and backend | 5 hrs | |
+| passing props/ raising state | 8hrs |  |
+| pseudocoding | 4hrs |  |
+| troubleshooting | 4hrs | |
+| Total | 50hrs |  |
 
 ## Schedule
 |  Day   | Deliverables                              |
 | ------ | ----------------------------------------- |
-|Mar 4th | project proposal worksheet / psuedocoding |
 |Mar 5th | project pitch / build out endpoints       |
-|Mar 6th | Build out front-end components            |
-|Mar 7th | OFF                                       |
+|Mar 6th | set up backend, test endpoints            |
+|Mar 7th | build front end components                |
 |Mar 8th | impliment user auth                       |
-|Mar 9th | styling                                   |
-|Mar 10th| MVP, begin post-MVP                       |
-|Mar 11th| post-MVP                                  |
-|Mar 12th| polishing                                 |
+|Mar 9th | connect front end and backend             |
+|Mar 10th| basic working app setup                   |
+|Mar 11th| styling                                   |
+|Mar 12th| post mvp                                  |
 |Mar 13th| final presentations                       |
 
 ## Post-MVP
