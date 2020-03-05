@@ -8,7 +8,7 @@ A user friendly medicaition tracker app that allows a user to create an account 
 
 GENERAL MVP - updated workflow 
 
-![alt text](https://res.cloudinary.com/rachelml/image/upload/v1581712500/Untitled_Diagram_b8be68.png)
+![alt text]()
 
 
 
@@ -32,25 +32,23 @@ GENERAL MVP - updated workflow
 
 
 ## ERD Diagram
-![alt text](https://res.cloudinary.com/rachelml/image/upload/v1581706850/Screen_Shot_2020-02-14_at_2.00.29_PM_czjnkv.png)
+![alt text]()
 
 
 
 ## Endpoints
 
-USER AUTH post-MVP functionality 
-- GET `/users/:id`
-- POST `/users`
-- PUT `/users/:id`
-- DELETE `/users/:id`
+USER AUTH functionality 
+- POST `/auth/login`
+- GET `/auth/verify`
 
 MEDICATION component CRUD functionality 
-- GET `/trips`
-- POST `/trips`
-- GET `/trips/:tripid`
+- GET `/medications`
+- POST `/medications`
+- GET `/medications/:medid`
 - GET `/trips/:departure_city/:destination_city/:travel_date_begin`
-- PUT `/trips/:tripid`
-- DELETE `/trips/:tripid`
+- PUT `/medications/:medid`
+- DELETE `/medications/:medid`
 
 Sample JSON from GET `/api/users`
 
@@ -80,7 +78,7 @@ Sample JSON from GET `/api/users`
 
 ## React Component Hierarchy
 
-![alt text](https://res.cloudinary.com/rachelml/image/upload/v1581707503/IMG_9975_armcfa.jpg)
+![alt text]()
 
 
 ## Components
