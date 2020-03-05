@@ -23,27 +23,22 @@ MedTrack MVP will allow a user to login and add medications and a pharmacy to th
 | :--------------: | :----------------------------------------- |
 |      React       | _Lorem ipsum dolor sit amet, consectetur._ |
 |   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      Cors        | _Lorem ipsum dolor sit amet, consectetur._ |
+|     Axios        | _Lorem ipsum dolor sit amet, consectetur._ |
+|  react-moment    | _Lorem ipsum dolor sit amet, consectetur._ |
+|  react-calenda   | _Lorem ipsum dolor sit amet, consectetur._ |
 
 
-## Additional Libraries
-- cors
-- express
-- react-router-dom
-- axios 
-- morgan
-- passport 
-- pg sequelize
 
 # MVP Client(Front end)
 
 ## Wireframes
 
-GENERAL MVP - updated workflow 
+Mobile
 
 ![alt text](https://res.cloudinary.com/rachelml/image/upload/v1583433964/Screen_Shot_2020-03-04_at_8.54.07_PM_qyv73b.png)
+
+Desktop view
 
 ![alt text](https://res.cloudinary.com/rachelml/image/upload/v1583433987/Screen_Shot_2020-03-04_at_8.54.29_PM_mwouoj.png)
 
@@ -56,25 +51,19 @@ GENERAL MVP - updated workflow
 
 Breakdown the initial logic defined in the previous sections into stateful and stateless components
 
-| Component | Description | 
-| --- | :--- |
-| Nav |functional |
-| App.js  | class | 
-| Login | functional  |
-| Register | functional |
-| MedList   | functional |
-| MedDetail   | functional |
-| PharmDetail   | functional |
-| CreateMed   | functional |
-| EditMed   | functional |
 
 |  Component   | State | Description                                                      |
 | :----------: | :---: | :--------------------------------------------------------------- |
 |    Header    |   n   | _The header will contain the navigation and logo._               |
 |  Navigation  |   n   | _The navigation will provide a link to each of the pages._       |
-|   Gallery    |   y   | _The gallery will render the posts using cards in flexbox._      |
-| Gallery Card |   n   | _The cards will render the post info via props._                 |
-|    Footer    |   n   | _The footer will show info about me and a link to my portfolio._ |
+|   App        |   y   | _The gallery will render the posts using cards in flexbox._      |
+| Login        |   n   | _The cards will render the post info via props._                 |
+|    Register  |   n   | _The footer will show info about me and a link to my portfolio._ |
+|    MedList   |   n   | _The header will contain the navigation and logo._               |
+|  MedDetail   |   n   | _The navigation will provide a link to each of the pages._       |
+| PharmDetail  |   y   | _The gallery will render the posts using cards in flexbox._      |
+| CreateMed    |   n   | _The cards will render the post info via props._                 |
+|    EditMed   |   n   | _The footer will show info about me and a link to my portfolio._ |
 
 
 ## MVP Server (Back End)
