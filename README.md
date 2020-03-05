@@ -65,6 +65,14 @@ Breakdown the initial logic defined in the previous sections into stateful and s
 | CreateMed   | functional |
 | EditMed   | functional |
 
+|  Component   | State | Description                                                      |
+| :----------: | :---: | :--------------------------------------------------------------- |
+|    Header    |   n   | _The header will contain the navigation and logo._               |
+|  Navigation  |   n   | _The navigation will provide a link to each of the pages._       |
+|   Gallery    |   y   | _The gallery will render the posts using cards in flexbox._      |
+| Gallery Card |   n   | _The cards will render the post info via props._                 |
+|    Footer    |   n   | _The footer will show info about me and a link to my portfolio._ |
+
 
 ## MVP Server (Back End)
 
