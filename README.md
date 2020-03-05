@@ -43,11 +43,14 @@ MedTrack MVP will allow a user to login and add medications and a pharmacy to th
 
 GENERAL MVP - updated workflow 
 
-![alt text]()
+![alt text](https://res.cloudinary.com/rachelml/image/upload/v1583433964/Screen_Shot_2020-03-04_at_8.54.07_PM_qyv73b.png)
+
+![alt text](https://res.cloudinary.com/rachelml/image/upload/v1583433987/Screen_Shot_2020-03-04_at_8.54.29_PM_mwouoj.png)
+
 
 ## React Component Hierarchy
 
-![alt text]()
+![alt text](https://res.cloudinary.com/rachelml/image/upload/v1583433873/Screen_Shot_2020-03-04_at_8.50.58_PM_z9nnha.png)
 
 ## Component Breakdown
 
@@ -77,7 +80,7 @@ Breakdown the initial logic defined in the previous sections into stateful and s
 ## MVP Server (Back End)
 
 ## ERD Model
-![alt text]()
+![alt text](https://res.cloudinary.com/rachelml/image/upload/v1583433885/Screen_Shot_2020-03-04_at_8.51.23_PM_bb489r.png)
 
 ## Endpoints
 
@@ -96,7 +99,7 @@ MEDICATION component CRUD functionality
 
 ## Priority Matrix
 
-Render your project priority matrix here
+![alt text](https://res.cloudinary.com/rachelml/image/upload/v1583433867/Screen_Shot_2020-03-04_at_8.50.47_PM_jgfl4o.png)
 
 ## Timeframes
 
