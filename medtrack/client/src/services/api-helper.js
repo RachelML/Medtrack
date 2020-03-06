@@ -29,3 +29,13 @@ export const verifyUser = async () => {
   }
   return false
 }
+
+const readAllPharmacies = async () => {
+    const resp = await api.get('/pharmacies')
+console.log(resp.data)    
+  }
+
+  export {
+    readAllPharmacies,
+  }
+  

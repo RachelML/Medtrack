@@ -2,11 +2,15 @@ import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
+import PharmacyView from './components/PharmacyView';
+
+
 
 import Login from './components/Login'
 import Register from './components/Register'
 
 import {
+  readAllPharmacies,
   loginUser,
   registerUser,
   verifyUser
@@ -18,6 +22,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      pharmacies: [],
+
   
       currentUser: null,
       authFormData: {
@@ -28,10 +34,31 @@ class App extends Component {
     };
   }
 
+  async componentDidMount() {
+    this.getPharmacies();
+    const currentUser = await verifyUser();
+    if (currentUser) {
+      this.setState({ currentUser })
+    }
+  }
+
+
+
+  getPharmacies = async () => {
+    const pharmacies = await readAllPharmacies();
+    this.setState({
+      pharmacies
+    })
+  }
+
   
 
   handleLoginButton = () => {
     this.props.history.push("/login")
+  }
+
+  handleRegisterButton = () => {
+    this.props.history.push("/register")
   }
 
   handleLogin = async () => {
@@ -80,9 +107,13 @@ class App extends Component {
                 <button onClick={this.handleLogout}>logout</button>
               </>
               :
-              <button onClick={this.handleLoginButton}>Login/register</button>
+              <div>
+              <button onClick={this.handleLoginButton}>Login</button>
+              <button onClick={this.handleRegisterButton}>Register</button>
+              </div>
             }
           </div>
+      
         </header>
         <Route exact path="/login" render={() => (
           <Login
@@ -94,7 +125,17 @@ class App extends Component {
             handleRegister={this.handleRegister}
             handleChange={this.authHandleChange}
             formData={this.state.authFormData} />)} />
-    
+
+                 <Route
+          exact path="/"
+          render={() => (
+            <PharmacyView
+              pharmacies={this.state.pharmacies}
+              pharmacyForm={this.state.pharmacyForm}
+              handleFormChange={this.handleFormChange}
+              newPharmacy={this.newPharmacy} />
+          )}
+        />
       </div>
     );
   }
