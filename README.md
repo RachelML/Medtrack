@@ -1,4 +1,5 @@
-# MedTrack - medication tracker
+# :pill: MedTrack 
+ medication tracker
 
 ## Overview
 
@@ -13,7 +14,7 @@ MedTrack MVP will allow a user to login and add medications and a pharmacy to th
 ## MVP Goals
 - User authentication with sign up, login, logout.
 - Create, read, update, delete medication info and pharmacy info
-- "take" button to decrement pill count by 1 
+- "take" button to decrement pill count by 1 and alert user pill taken(css)
 - button to view medication details
 - button to view pharmacy details
 
@@ -21,7 +22,7 @@ MedTrack MVP will allow a user to login and add medications and a pharmacy to th
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | react..                                    |
+|      React       | react                                    |
 |   React Router   | Routing in react                           |
 |      Cors        | Cors gem                                   |
 |     Axios        | fetch Api data                             |
@@ -36,7 +37,7 @@ MedTrack MVP will allow a user to login and add medications and a pharmacy to th
 
 Mobile
 
-![alt text](https://res.cloudinary.com/rachelml/image/upload/v1583433964/Screen_Shot_2020-03-04_at_8.54.07_PM_qyv73b.png)
+![alt text](https://res.cloudinary.com/rachelml/image/upload/v1583506023/Screen_Shot_2020-03-06_at_9.46.17_AM_lkstsa.png)
 
 Desktop view
 
@@ -49,17 +50,16 @@ Desktop view
 
 ## Component Breakdown
 
-Breakdown the initial logic defined in the previous sections into stateful and stateless components
 
 
 |  Component   | State | Description                                                      |
 | :----------: | :---: | :--------------------------------------------------------------- |
-|    Header    |   n   | _The header will contain the navigation, logout and logo._        |
-|  Navigation  |   n   | _The navigation will provide a link to each of the pages and link to home page._       |
-|   App        |   y   | _The app will hold state and on change functions._      |
+|    Header    |   n   | _The header will contain the "back to home" navigation and logo._        |
+|  Navigation  |   n   | _The navigation will provide a link to each of the pages, pharmacy detail and link to home page._       |
+|   App        |   y   | _The app will hold state and onchange functions._      |
 |   Login      |   n   | _The login will render the login prompt._                 |
 |    Register  |   n   | _The registration will show the new user registration._ |
-|    MedList   |   n   | _The medlist will display the medication names and basic detail._               |
+|    MedList   |   y   | _The medlist will display the medication names and basic detail._  |
 |  MedDetail   |   y   | _The MedDetail will display all medication information and change state ._       |
 | PharmDetail  |   n   | _The gallery will render the posts using cards in flexbox._      |
 | CreateMed    |   n   | _The Create Med will allow user to Create medication _                 |
