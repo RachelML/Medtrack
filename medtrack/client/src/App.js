@@ -49,6 +49,7 @@ class App extends Component {
     this.setState({
       pharmacies
     })
+    console.log(this.state.pharmacies)
   }
 
   
@@ -126,16 +127,13 @@ class App extends Component {
             handleChange={this.authHandleChange}
             formData={this.state.authFormData} />)} />
 
-                 <Route
-          exact path="/"
-          render={() => (
+               
             <PharmacyView
               pharmacies={this.state.pharmacies}
               pharmacyForm={this.state.pharmacyForm}
               handleFormChange={this.handleFormChange}
               newPharmacy={this.newPharmacy} />
-          )}
-        />
+        
       </div>
     );
   }

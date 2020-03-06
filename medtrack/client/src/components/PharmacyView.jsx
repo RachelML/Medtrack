@@ -2,11 +2,11 @@ import React from 'react';
 import { withRouter } from 'react-router';
 
 function PharmacyView(props) {
-    console.log(props)
+    console.log(props.pharmacies[0])
   return (
     <div>
         
-      {/* {props.pharmacies.map(pharm => (
+      {props.pharmacies.map(pharm => (
         <div
           key={pharm.id}
           onClick={(e) => {
@@ -18,11 +18,10 @@ function PharmacyView(props) {
             <p>{pharm.pharm_name}</p>
             <p>{pharm.address}</p>
             <p>{pharm.phone_number}</p>
-
           </h3>
         </div>
       ))}
-      <div
+      {/* <div
         onClick={() => {
           props.history.push('/new/teacher');
           window.scrollTo(0, 0);

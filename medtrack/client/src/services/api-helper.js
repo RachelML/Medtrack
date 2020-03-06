@@ -30,12 +30,32 @@ export const verifyUser = async () => {
   return false
 }
 
+const createPharmacies = async (data) => {
+    const resp = await api.post('/pharmacies', { teacher: data })
+    return resp.data
+  }
+
+
 const readAllPharmacies = async () => {
     const resp = await api.get('/pharmacies')
-console.log(resp.data)    
+    return resp.data
   }
+
+const updatePharmacies = async (id, data) => {
+  const resp = await api.put(`/pharmacies/${id}`, { teacher: data })
+  return resp.data
+}
+
+const destroyPharmacies = async (id) => {
+  const resp = await api.delete(`/pharmacies/${id}`)
+  return resp.data
+}
+
 
   export {
     readAllPharmacies,
+    createPharmacies,
+    updatePharmacies,
+    destroyPharmacies
   }
   
