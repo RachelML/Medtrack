@@ -123,7 +123,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="header">
-          <h1><Link to='/' onClick={() => this.setState({
+          <h1><Link to='/medlist' onClick={() => this.setState({
             pharmacyForm: {
               pharm_name: "",
               address: "",

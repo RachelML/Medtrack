@@ -4,6 +4,5 @@ Rails.application.routes.draw do
   get '/auth/verify', to: 'authentication#verify'
   resources :users
 
-  resources :pharmacies
 
 end

@@ -1,2 +1,0 @@
-class Pharmacy < ApplicationRecord
-end

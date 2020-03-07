@@ -5172,3 +5172,446 @@ Processing by AuthenticationController#login as HTML
 Completed 200 OK in 207ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 892)
 
 
+Started POST "/auth/login" for ::1 at 2020-03-06 21:52:14 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 236ms (Views: 0.4ms | ActiveRecord: 4.9ms | Allocations: 6291)
+
+
+Started POST "/pharmacies" for ::1 at 2020-03-06 21:53:35 -0500
+Processing by PharmaciesController#create as HTML
+  Parameters: {"pharmacy"=>{"pharm_name"=>"", "address"=>"", "phone_number"=>"", "comment"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pharmacies_controller.rb:20:in `create'
+  [1m[36mPharmacy Create (1.3ms)[0m  [1m[32mINSERT INTO "pharmacies" ("pharm_name", "address", "phone_number", "comment", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["pharm_name", ""], ["address", ""], ["phone_number", ""], ["comment", ""], ["created_at", "2020-03-07 02:53:35.422800"], ["updated_at", "2020-03-07 02:53:35.422800"]]
+  ↳ app/controllers/pharmacies_controller.rb:20:in `create'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pharmacies_controller.rb:20:in `create'
+Completed 201 Created in 25ms (Views: 1.4ms | ActiveRecord: 6.9ms | Allocations: 7017)
+
+
+Started GET "/pharmacies" for ::1 at 2020-03-06 21:53:40 -0500
+Started GET "/auth/verify" for ::1 at 2020-03-06 21:53:40 -0500
+Processing by PharmaciesController#index as HTML
+  [1m[36mPharmacy Load (0.3ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies"[0m
+  ↳ app/controllers/pharmacies_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 1258)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1024)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-06 21:53:52 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 205ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 913)
+
+
+Started GET "/auth/verify" for ::1 at 2020-03-06 21:55:16 -0500
+Started GET "/pharmacies" for ::1 at 2020-03-06 21:55:16 -0500
+Processing by PharmaciesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPharmacy Load (0.8ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies"[0m
+  ↳ app/controllers/pharmacies_controller.rb:8:in `index'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.8ms | Allocations: 1607)
+
+
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 2172)
+
+
+Started GET "/pharmacies" for ::1 at 2020-03-06 21:55:26 -0500
+Started GET "/auth/verify" for ::1 at 2020-03-06 21:55:26 -0500
+Processing by PharmaciesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPharmacy Load (0.7ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies"[0m
+  ↳ app/controllers/pharmacies_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.7ms | Allocations: 1387)
+
+
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.9ms | Allocations: 2174)
+
+
+Started GET "/auth/verify" for ::1 at 2020-03-06 21:55:56 -0500
+Started GET "/pharmacies" for ::1 at 2020-03-06 21:55:56 -0500
+Processing by AuthenticationController#verify as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+  [1m[36mPharmacy Load (0.5ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies"[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 944)
+
+
+  ↳ app/controllers/pharmacies_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.5ms | Allocations: 2070)
+
+
+Started POST "/users/" for ::1 at 2020-03-06 21:56:22 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Steve", "email"=>"Steve", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (4.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 422 Unprocessable Entity in 223ms (Views: 0.2ms | ActiveRecord: 5.0ms | Allocations: 5178)
+
+
+Started POST "/users/" for ::1 at 2020-03-06 21:56:24 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Steve", "email"=>"Steve", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 422 Unprocessable Entity in 217ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 3775)
+
+
+Started POST "/users/" for ::1 at 2020-03-06 21:56:24 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Steve", "email"=>"Steve", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 422 Unprocessable Entity in 211ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 3771)
+
+
+Started POST "/users/" for ::1 at 2020-03-06 21:56:40 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Steve", "email"=>"Steve", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 422 Unprocessable Entity in 218ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 3774)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-06 21:57:43 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Steve", "email"=>"Steve", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Steve", "email"=>"Steve", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Steve"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 1012)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2020-03-06 21:57:44 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Steve", "email"=>"Steve", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Steve", "email"=>"Steve", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Steve"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 1045)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2020-03-06 21:57:45 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Steve", "email"=>"Steve", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Steve", "email"=>"Steve", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Steve"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 1014)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2020-03-06 21:57:45 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Steve", "email"=>"Steve", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Steve", "email"=>"Steve", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Steve"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms | Allocations: 1016)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2020-03-06 21:57:45 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Steve", "email"=>"Steve", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Steve", "email"=>"Steve", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Steve"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 1014)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2020-03-06 21:57:59 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 209ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 898)
+
+
+Started POST "/users/" for ::1 at 2020-03-06 21:58:13 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"steve", "email"=>"steve", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "steve"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 422 Unprocessable Entity in 212ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 3811)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-06 21:58:33 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"steve", "email"=>"steve", "password"=>"[FILTERED]", "authentication"=>{"username"=>"steve", "email"=>"steve", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "steve"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms | Allocations: 1014)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/users/" for ::1 at 2020-03-06 21:58:52 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"test", "email"=>"test", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 422 Unprocessable Entity in 212ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 3770)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-06 21:59:57 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Rachel", "email"=>"test", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Rachel", "email"=>"test", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 205ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 891)
+
+
+Started POST "/users/" for ::1 at 2020-03-06 22:00:17 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Rachel", "email"=>"Rachel", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 422 Unprocessable Entity in 211ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 4168)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-06 22:00:40 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"steve", "email"=>"Rachel", "password"=>"[FILTERED]", "authentication"=>{"username"=>"steve", "email"=>"Rachel", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "steve"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms | Allocations: 1014)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2020-03-06 22:00:41 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"steve", "email"=>"Rachel", "password"=>"[FILTERED]", "authentication"=>{"username"=>"steve", "email"=>"Rachel", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "steve"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms | Allocations: 1013)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2020-03-06 22:00:43 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"steve", "email"=>"Rachel", "password"=>"[FILTERED]", "authentication"=>{"username"=>"steve", "email"=>"Rachel", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "steve"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms | Allocations: 1013)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2020-03-06 22:01:05 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"rachel", "email"=>"Rachel", "password"=>"[FILTERED]", "authentication"=>{"username"=>"rachel", "email"=>"Rachel", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 1013)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/auth/login" for ::1 at 2020-03-06 22:01:12 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Rachel", "email"=>"Rachel", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Rachel", "email"=>"Rachel", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 207ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 890)
+
+
+Started GET "/auth/verify" for ::1 at 2020-03-06 22:03:20 -0500
+Started GET "/pharmacies" for ::1 at 2020-03-06 22:03:20 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#verify as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mPharmacy Load (0.4ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies"[0m
+  ↳ app/controllers/pharmacies_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 6.1ms | ActiveRecord: 4.1ms | Allocations: 6997)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 35ms (Views: 0.2ms | ActiveRecord: 10.4ms | Allocations: 12284)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-06 22:03:35 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 208ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1083)
+
+
+Started POST "/users/" for ::1 at 2020-03-06 22:03:50 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Tyler", "email"=>"Tyler@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tyler"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Tyler@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tyler"], ["email", "Tyler@gmail.com"], ["password_digest", "$2a$12$gcsEBlHUPx7xH1.XlIrkxOU6elr9SRV3GghXnI9dMO6yQpnrjLU2a"], ["created_at", "2020-03-07 03:03:50.722241"], ["updated_at", "2020-03-07 03:03:50.722241"]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 201 Created in 217ms (Views: 0.6ms | ActiveRecord: 2.3ms | Allocations: 4853)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-06 22:04:17 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Tyler", "email"=>"Tyler@gmail.com", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Tyler", "email"=>"Tyler@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tyler"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 211ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 891)
+
+
+Started GET "/pharmacies" for ::1 at 2020-03-06 22:06:28 -0500
+Started GET "/auth/verify" for ::1 at 2020-03-06 22:06:28 -0500
+Processing by PharmaciesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPharmacy Load (0.8ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies"[0m
+  ↳ app/controllers/pharmacies_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.8ms | Allocations: 1413)
+
+
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 2.4ms | Allocations: 2197)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-06 22:10:26 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 206ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 913)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-06 22:13:35 -0500
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 203ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 891)
+
+
+Started POST "/pharmacies" for ::1 at 2020-03-06 22:14:14 -0500
+Processing by PharmaciesController#create as HTML
+  Parameters: {"pharmacy"=>{"pharm_name"=>"", "address"=>"", "phone_number"=>"", "comment"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pharmacies_controller.rb:20:in `create'
+  [1m[36mPharmacy Create (1.7ms)[0m  [1m[32mINSERT INTO "pharmacies" ("pharm_name", "address", "phone_number", "comment", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["pharm_name", ""], ["address", ""], ["phone_number", ""], ["comment", ""], ["created_at", "2020-03-07 03:14:14.719305"], ["updated_at", "2020-03-07 03:14:14.719305"]]
+  ↳ app/controllers/pharmacies_controller.rb:20:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pharmacies_controller.rb:20:in `create'
+Completed 201 Created in 6ms (Views: 0.5ms | ActiveRecord: 2.5ms | Allocations: 2455)
+
+
+Started GET "/pharmacies" for ::1 at 2020-03-06 22:14:18 -0500
+Started GET "/auth/verify" for ::1 at 2020-03-06 22:14:18 -0500
+Processing by PharmaciesController#index as HTML
+  [1m[36mPharmacy Load (0.3ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies"[0m
+  ↳ app/controllers/pharmacies_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1369)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 903)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3561697636075693380)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePharmacies (20200306171955)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.5ms)[0m  [1m[35mDROP TABLE "pharmacies"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200306171955"]]
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3561697636075693380)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
