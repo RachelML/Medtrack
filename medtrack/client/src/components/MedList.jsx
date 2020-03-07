@@ -18,16 +18,16 @@ function MedList(props) {
              Hi,{props.currentUser
               ?
               <>
-                <span>{props.currentUser.username} </span>
+                <span className="user-render">{props.currentUser.username} </span>
               </>
               :
               <div>
               </div>
             }
         
-             <p>Here are your medications</p>
+             <p className="your-meds">Here are your medications</p>
 
-             <Clock
+             <Clock className="clock"
           format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
           ticking={true}
          />            
@@ -36,7 +36,7 @@ function MedList(props) {
 
              </div>
         <div className="add-med">
-        <Link  to={`/createmedication`}>Add Medication</Link>
+        <Link className="add-medication" to={`/createmedication`}>Add Medication</Link>
         </div>
         <Link  to={`/meddetail`}>
         <div className="med">
@@ -44,7 +44,7 @@ function MedList(props) {
             <p>Lipitor</p>
             <p>take with food</p>
             <p>Last Taken: 3/3</p>
-            <button>take</button>
+            <button className="take">take</button>
         </div>
         </Link>
         <div className="add-pharm">

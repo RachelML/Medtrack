@@ -139,7 +139,7 @@ class App extends Component {
             {this.state.currentUser
               ?
               <>
-                <span>{this.state.currentUser.username}</span>
+                <span className="header-name">{this.state.currentUser.username}</span>
                 <button className="header-logout" onClick={this.handleLogout}>logout</button>
               </>
               :
