@@ -1,6 +1,8 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter, Link, Route } from 'react-router-dom';
 import PharmacyView from './PharmacyView';
+import EditMedication from './EditMedication'
+
 
 function MedDetail(props) {
     console.log(props.currentUser)
@@ -19,8 +21,10 @@ function MedDetail(props) {
             <button>take</button>
         </div>
      <Link to={`/MedList`}>back</Link>
-     <button>edit</button>
+     <Link  to={`/editmedication`}>Edit</Link>     
      <button>delete</button>
+
+
 
 
 

@@ -1,6 +1,9 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import PharmacyView from './PharmacyView';
+import Clock from 'react-live-clock';
+
+
 
 function MedList(props) {
     console.log(props.currentUser)
@@ -23,6 +26,14 @@ function MedList(props) {
             }
         
              <p>Here are your medications</p>
+
+             <Clock
+          format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
+          ticking={true}
+         />            
+
+
+
              </div>
         <div className="add-med">
         <Link  to={`/createmedication`}>Add Medication</Link>

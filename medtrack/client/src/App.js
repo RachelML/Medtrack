@@ -9,7 +9,8 @@ import Register from './components/Register'
 import MedList from './components/MedList'
 import CreateMedication from './components/CreateMedication'
 import MedDetail from './components/MedDetail'
-
+import EditMedication from './components/EditMedication'
+import logopill from './images/logopill.png'
 
 import {
   createPharmacies,
@@ -48,6 +49,8 @@ class App extends Component {
     const currentUser = await verifyUser();
     if (currentUser) {
       this.setState({ currentUser })
+      this.props.history.push("/medlist")
+
     }
   }
 
@@ -123,7 +126,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="header">
-          <h1><Link to='/medlist' onClick={() => this.setState({
+          <img className="pill" src={logopill} />
+          <h1><Link className="title" to='/' onClick={() => this.setState({
             pharmacyForm: {
               pharm_name: "",
               address: "",
@@ -171,6 +175,9 @@ class App extends Component {
               currentUser={this.state.currentUser}
                     />)} />
           <Route exact path="/createmedication" component={CreateMedication} />
+          <Route exact path="/editmedication" component={EditMedication} />
+
+
           <Route exact path="/meddetail" component={MedDetail} />
 
 
