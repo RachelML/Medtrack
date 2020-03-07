@@ -6,11 +6,13 @@
 
 .header {
   display: flex;
+
 }
 
 .login-header {
 margin: auto;
-
+background-color: rgb(46,58,97);
+margin-right: 30px
 }
 
 .login {
@@ -85,4 +87,33 @@ header {
   border-radius: 5px;
   border: solid 1px rgb(135,162,206);
 
+}
+
+.header-login {
+  border: none;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: rgb(135,162,206);
+}
+.header-register {
+  border: none;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  margin-left: 40px;
+  background-color: rgb(135,162,206);
+
+}
+
+.header-logout {
+  border: none;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: rgb(135,162,206);
+}
+
+.header-button {
+  background-color: rgb(46,58,97);
 }

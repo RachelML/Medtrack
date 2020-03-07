@@ -25,7 +25,7 @@ const Login = (props) => {
       </form>
 
     </div>
-          <Link className="register-link"to="/register">Register</Link>
+          <Link  style={{paddingLeft: 13, textDecoration: 'none'}} className="register-link"to="/register">Register</Link>
     </div>
 
   );

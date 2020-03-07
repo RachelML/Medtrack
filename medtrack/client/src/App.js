@@ -127,7 +127,7 @@ class App extends Component {
       <div className="App">
         <header className="header">
           <img className="pill" src={logopill} />
-          <h1><Link className="title" to='/' onClick={() => this.setState({
+          <h1><Link style={{ textDecoration: 'none'}} className="title" to='/' onClick={() => this.setState({
             pharmacyForm: {
               pharm_name: "",
               address: "",
@@ -140,12 +140,12 @@ class App extends Component {
               ?
               <>
                 <span>{this.state.currentUser.username}</span>
-                <button onClick={this.handleLogout}>logout</button>
+                <button className="header-logout" onClick={this.handleLogout}>logout</button>
               </>
               :
-              <div>
-              <button onClick={this.handleLoginButton}>Login</button>
-              <button onClick={this.handleRegisterButton}>Register</button>
+              <div className="header-button">
+              <button className="header-login"  onClick={this.handleLoginButton}>Login</button>
+              <button className="header-register"  onClick={this.handleRegisterButton}>Register</button>
               </div>
             }
           </div>
