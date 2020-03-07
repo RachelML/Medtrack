@@ -6,7 +6,7 @@ function PharmacyView(props) {
   return (
     <div>
         
-      {/* {props.pharmacies.map(pharm => (
+      {props.pharmacies.map(pharm => (
         <div
           key={pharm.id}
           onClick={(e) => {
@@ -20,7 +20,7 @@ function PharmacyView(props) {
             <p>{pharm.phone_number}</p>
           </h3>
         </div>
-      ))} */}
+      ))}
       {/* <div
         onClick={() => {
           props.history.push('/new/teacher');

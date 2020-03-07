@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Login = (props) => {
 
   return (
-    <div >
+    <div className="login">
       <h2>login</h2>
       <hr />
       <form onSubmit={(e) => {

@@ -7,6 +7,8 @@ import CreatePharmacy from './components/CreatePharmacy'
 import Login from './components/Login'
 import Register from './components/Register'
 import MedList from './components/MedList'
+import CreateMedication from './components/CreateMedication'
+import MedDetail from './components/MedDetail'
 
 
 import {
@@ -93,7 +95,7 @@ class App extends Component {
     e.preventDefault();
     const currentUser = await registerUser(this.state.authFormData);
     this.setState({ currentUser });
-    this.props.history.push("/medlist")
+        this.props.history.push("/medlist")
 
   }
 
@@ -102,6 +104,8 @@ class App extends Component {
     this.setState({
       currentUser: null
     })
+    this.props.history.push("/")
+
   }
 
   authHandleChange = (e) => {
@@ -118,7 +122,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header>
+        <header className="header">
           <h1><Link to='/' onClick={() => this.setState({
             pharmacyForm: {
               pharm_name: "",
@@ -127,11 +131,11 @@ class App extends Component {
               comment: ""
             }
           })}>MedTrack</Link></h1>
-          <div>
+          <div className="login-header">
             {this.state.currentUser
               ?
               <>
-                <p>{this.state.currentUser.username}</p>
+                <span>{this.state.currentUser.username}</span>
                 <button onClick={this.handleLogout}>logout</button>
               </>
               :
@@ -154,7 +158,7 @@ class App extends Component {
             handleChange={this.authHandleChange}
             formData={this.state.authFormData} />)} />
             <Route
-          path="/new/pharmacy"
+          path="/createpharmacy"
           render={() => (
             <CreatePharmacy
               handleFormChange={this.handleFormChange}
@@ -166,12 +170,17 @@ class App extends Component {
                <MedList 
               currentUser={this.state.currentUser}
                     />)} />
-                    
-            <PharmacyView
+          <Route exact path="/createmedication" component={CreateMedication} />
+          <Route exact path="/meddetail" component={MedDetail} />
+
+
+    
+          
+            {/* <PharmacyView
               pharmacies={this.state.pharmacies}
               pharmacyForm={this.state.pharmacyForm}
               handleFormChange={this.handleFormChange}
-              newPharmacy={this.newPharmacy} />
+              newPharmacy={this.newPharmacy} /> */}
         
       </div>
     );
