@@ -31,7 +31,7 @@ export const verifyUser = async () => {
 }
 
 const createPharmacies = async (data) => {
-    const resp = await api.post('/pharmacies', { teacher: data })
+    const resp = await api.post('/pharmacies', { pharmacy: data })
     return resp.data
   }
 
@@ -42,7 +42,7 @@ const readAllPharmacies = async () => {
   }
 
 const updatePharmacies = async (id, data) => {
-  const resp = await api.put(`/pharmacies/${id}`, { teacher: data })
+  const resp = await api.put(`/pharmacies/${id}`, { pharmacy: data })
   return resp.data
 }
 

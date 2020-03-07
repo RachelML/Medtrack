@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
 import PharmacyView from './components/PharmacyView';
-
-
-
+import CreatePharmacy from './components/CreatePharmacy'
 import Login from './components/Login'
 import Register from './components/Register'
+import MedList from './components/MedList'
+
 
 import {
+  createPharmacies,
   readAllPharmacies,
   loginUser,
   registerUser,
@@ -23,6 +24,12 @@ class App extends Component {
     super(props);
     this.state = {
       pharmacies: [],
+      pharmacyForm: {
+        pharm_name: "",
+        address: "",
+        phone_number: "",
+        comment: ""
+      },
 
   
       currentUser: null,
@@ -52,11 +59,25 @@ class App extends Component {
     console.log(this.state.pharmacies)
   }
 
+  newPharmacy = async (e) => {
+    e.preventDefault();
+    const pharmacy = await createPharmacies(this.state.pharmacyForm);
+    this.setState(prevState => ({
+      pharmacies: [...prevState.teachers, pharmacy],
+      pharmacyForm: {
+        pharm_name: "",
+        address: "",
+        phone_number: "",
+        comment: ""
+      }
+    }))
+  }
   
 
   handleLoginButton = () => {
     this.props.history.push("/login")
   }
+
 
   handleRegisterButton = () => {
     this.props.history.push("/register")
@@ -65,12 +86,15 @@ class App extends Component {
   handleLogin = async () => {
     const currentUser = await loginUser(this.state.authFormData);
     this.setState({ currentUser });
+    this.props.history.push("/medlist")
   }
 
   handleRegister = async (e) => {
     e.preventDefault();
     const currentUser = await registerUser(this.state.authFormData);
     this.setState({ currentUser });
+    this.props.history.push("/medlist")
+
   }
 
   handleLogout = () => {
@@ -91,13 +115,16 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div className="App">
         <header>
           <h1><Link to='/' onClick={() => this.setState({
-            teacherForm: {
-              name: "",
-              photo: ""
+            pharmacyForm: {
+              pharm_name: "",
+              address: "",
+              phone_number: "",
+              comment: ""
             }
           })}>MedTrack</Link></h1>
           <div>
@@ -126,8 +153,20 @@ class App extends Component {
             handleRegister={this.handleRegister}
             handleChange={this.authHandleChange}
             formData={this.state.authFormData} />)} />
+            <Route
+          path="/new/pharmacy"
+          render={() => (
+            <CreatePharmacy
+              handleFormChange={this.handleFormChange}
+              pharmacyForm={this.state.pharmacyForm}
+              newPharmacy={this.newPharmacy} />
+          )} />
 
-               
+          <Route exact path="/medlist" render={() => (
+               <MedList 
+              currentUser={this.state.currentUser}
+                    />)} />
+                    
             <PharmacyView
               pharmacies={this.state.pharmacies}
               pharmacyForm={this.state.pharmacyForm}
