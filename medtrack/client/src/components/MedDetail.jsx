@@ -14,10 +14,10 @@ function MedDetail(props) {
         <div>
    <p>Medication Detail</p>
         <div className="med">
-            < p>9:00am</p>
-            <p>Lipitor</p>
-            <p>take with food</p>
-            <p>Last Taken: 3/3</p>
+        <   p className="med-time">9:00am</p>
+            <p className="med-name">Lipitor</p>
+            <p className="with-food">take with food</p>
+            <p className="last-taken">Last Taken: 3/3</p>
             <button>take</button>
         </div>
      <Link to={`/MedList`}>back</Link>

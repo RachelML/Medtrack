@@ -40,15 +40,15 @@ function MedList(props) {
         </div>
         <Link  to={`/meddetail`}>
         <div className="med">
-            < p>9:00am</p>
-            <p>Lipitor</p>
-            <p>take with food</p>
-            <p>Last Taken: 3/3</p>
+            <p className="med-time">9:00am</p>
+            <p className="med-name">Lipitor</p>
+            <p className="with-food">take with food</p>
+            <p className="last-taken">Last Taken: 3/3</p>
             <button className="take">take</button>
         </div>
         </Link>
         <div className="add-pharm">
-        <Link to={`/createpharmacy`}>Add Pharmacy</Link>
+        <Link className="add-pharmacy" to={`/createpharmacy`}>Add Pharmacy</Link>
         </div>
 
 

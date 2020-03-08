@@ -11,6 +11,7 @@ import CreateMedication from './components/CreateMedication'
 import MedDetail from './components/MedDetail'
 import EditMedication from './components/EditMedication'
 import logopill from './images/logopill.png'
+import Home from './components/Home'
 
 import {
   createPharmacies,
@@ -45,7 +46,9 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    this.getPharmacies();
+    this.props.history.push("/home")
+
+    // this.getPharmacies();
     const currentUser = await verifyUser();
     if (currentUser) {
       this.setState({ currentUser })
@@ -56,27 +59,27 @@ class App extends Component {
 
 
 
-  getPharmacies = async () => {
-    const pharmacies = await readAllPharmacies();
-    this.setState({
-      pharmacies
-    })
-    console.log(this.state.pharmacies)
-  }
+  // getPharmacies = async () => {
+  //   const pharmacies = await readAllPharmacies();
+  //   this.setState({
+  //     pharmacies
+  //   })
+  //   console.log(this.state.pharmacies)
+  // }
 
-  newPharmacy = async (e) => {
-    e.preventDefault();
-    const pharmacy = await createPharmacies(this.state.pharmacyForm);
-    this.setState(prevState => ({
-      pharmacies: [...prevState.teachers, pharmacy],
-      pharmacyForm: {
-        pharm_name: "",
-        address: "",
-        phone_number: "",
-        comment: ""
-      }
-    }))
-  }
+  // newPharmacy = async (e) => {
+  //   e.preventDefault();
+  //   const pharmacy = await createPharmacies(this.state.pharmacyForm);
+  //   this.setState(prevState => ({
+  //     pharmacies: [...prevState.teachers, pharmacy],
+  //     pharmacyForm: {
+  //       pharm_name: "",
+  //       address: "",
+  //       phone_number: "",
+  //       comment: ""
+  //     }
+  //   }))
+  // }
   
 
   handleLoginButton = () => {
@@ -107,7 +110,7 @@ class App extends Component {
     this.setState({
       currentUser: null
     })
-    this.props.history.push("/")
+    this.props.history.push("/home")
 
   }
 
@@ -127,7 +130,7 @@ class App extends Component {
       <div className="App">
         <header className="header">
           <img className="pill" src={logopill} />
-          <h1><Link style={{ textDecoration: 'none'}} className="title" to='/' onClick={() => this.setState({
+          <h1><Link style={{ textDecoration: 'none'}} className="title" to='/home' onClick={() => this.setState({
             pharmacyForm: {
               pharm_name: "",
               address: "",
@@ -179,6 +182,8 @@ class App extends Component {
 
 
           <Route exact path="/meddetail" component={MedDetail} />
+          <Route exact path="/home" component={Home} />
+
 
 
     

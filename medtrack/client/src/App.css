@@ -1,7 +1,9 @@
+
+
 * {
   text-align: center;
   background-color:rgb(37,50,91) ;
-  color: white
+  color: white;
 }
 
 .header {
@@ -60,7 +62,19 @@ margin-right: 30px
 
 }
 
+.add-pharmacy {
+  background-color: rgb(230,85,69);
+  border: none;
+
+}
+
 .add-pharm {
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgb(230,85,69);
+  margin: auto;
 
   text-align: center;
 
@@ -68,7 +82,28 @@ margin-right: 30px
 
 .med {
   margin: 0 60px;
+  background-color: rgb(109,128,198);
+  border-radius: 10px;
 }
+
+.med-time {
+  background-color: rgb(109,128,198);
+  border-radius: 10px;
+
+
+}
+.med-name {
+  background-color: rgb(109,128,198);
+
+}
+.with-food {
+  background-color: rgb(109,128,198);
+
+}
+.last-taken{
+  background-color: rgb(109,128,198);
+}
+
 h1 {
   background-color: rgb(46,58,97);
 }
