@@ -32,7 +32,7 @@ class App extends Component {
         pharm_name: "",
         address: "",
         phone_number: "",
-        comment: ""
+
       },
 
   
@@ -64,23 +64,24 @@ class App extends Component {
     this.setState({
       pharmacies
     })
-    console.log(this.state.pharmacies)
   }
 
   newPharmacy = async (e) => {
     e.preventDefault();
     const pharmacy = await createPharmacies(this.state.pharmacyForm);
     this.setState(prevState => ({
-      pharmacies: [...prevState.teachers, pharmacy],
+      pharmacies: [...prevState.pharmacies, pharmacy],
       pharmacyForm: {
         pharm_name: "",
         address: "",
         phone_number: "",
-        comment: ""
+
       }
     }))
   }
   
+
+
 
   handleLoginButton = () => {
     this.props.history.push("/login")
@@ -117,6 +118,16 @@ class App extends Component {
 
   }
 
+  handleFormChange = (e) => {
+    const { name, value } = e.target;
+    this.setState(prevState => ({
+      pharmacyForm: {
+        ...prevState.pharmacyForm,
+        [name]: value
+      }
+    }))
+  }
+
   authHandleChange = (e) => {
     const { name, value } = e.target;
     this.setState(prevState => ({
@@ -137,8 +148,7 @@ class App extends Component {
             pharmacyForm: {
               pharm_name: "",
               address: "",
-              phone_number: "",
-              comment: ""
+              phone_number: ""
             }
           })}>MedTrack</Link></h1>
           <div className="login-header">
@@ -179,6 +189,13 @@ class App extends Component {
           <Route exact path="/medlist" render={() => (
                <MedList 
               currentUser={this.state.currentUser}
+              pharmacies={this.state.pharmacies}
+              pharmacyForm={this.state.pharmacyForm}
+              handleFormChange={this.handleFormChange}
+              newPharmacy={this.newPharmacy}
+              handleFormChange={this.handleFormChange}
+              pharmacyForm={this.state.pharmacyForm}
+              newPharmacy={this.newPharmacy}  
                     />)} />
           <Route exact path="/createmedication" component={CreateMedication} />
           <Route exact path="/editmedication" component={EditMedication} />
@@ -190,12 +207,17 @@ class App extends Component {
           handleLoginButton={this.handleLoginButton}
           handleRegisterButton={this.handleRegisterButton}
            />)} />
+                <Route
+          path="/pharmacyview"
+          render={() => (
+            <PharmacyView
+            pharmacies={this.state.pharmacies}
+            pharmacyForm={this.state.pharmacyForm}
+            handleFormChange={this.handleFormChange}
+            newPharmacy={this.newPharmacy} />
+          )} />
 
-           <PharmacyView
-              pharmacies={this.state.pharmacies}
-              pharmacyForm={this.state.pharmacyForm}
-              handleFormChange={this.handleFormChange}
-              newPharmacy={this.newPharmacy} />
+        
          
           
            

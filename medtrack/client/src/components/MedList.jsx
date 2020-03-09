@@ -8,11 +8,12 @@ import Clock from 'react-live-clock';
 function MedList(props) {
     console.log(props.currentUser)
 
-  
+
 
   return (
  
         <div>
+
             <div className="welcome-med">
     
              Hi,{props.currentUser
@@ -51,7 +52,7 @@ function MedList(props) {
         <Link className="add-pharmacy" to={`/createpharmacy`}>Add Pharmacy</Link>
         </div>
 
-
+        <Link to={`/pharmacyview`}>My Pharmacy</Link>
    
         </div>
 

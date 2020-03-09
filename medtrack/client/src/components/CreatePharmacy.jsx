@@ -9,24 +9,22 @@ function CreatePharmacy(props) {
         <p>Pharmacy Name:</p>
         <input
           type="text"
-          name="photo"
-        //   value={props.teacherForm.photo}
-          onChange={props.handleFormChange} />
+          name="pharm_name"
+          value={props.pharmacyForm.pharm_name}
+          onChange={props.handleFormChange}/>
           <p>Pharmacy Address:</p>
         <input
           type="text"
-          name="name"
-        //   value={props.teacherForm.name}
+          name="address"
+          value={props.pharmacyForm.address}
           onChange={props.handleFormChange} />
           <p>Pharmacy Phone:</p>
         <input
           type="text"
-          name="name"
-        //   value={props.teacherForm.name}
+          name="phone_number"
+          value={props.pharmacyForm.phone_number}
           onChange={props.handleFormChange} />
-          <div>
         <button className="login-button">Submit</button>
-        </div>
       </form>
     </div >
   )

@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::API
     SECRET_KEY = Rails.application.secrets.secret_key_base.to_s
+
+    # before_action :authorize_request
+    # attr_reader :current_user
   
     def encode(payload, exp = 24.hours.from_now)
       payload[:exp] = exp.to_i

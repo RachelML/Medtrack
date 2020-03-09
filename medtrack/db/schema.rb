@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_07_212633) do
+ActiveRecord::Schema.define(version: 2020_03_09_165537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "medications", force: :cascade do |t|
+    t.string "brand_name"
+    t.string "generic_name"
+    t.boolean "taken"
+    t.integer "pills_left"
+    t.string "strength"
+    t.string "dosage"
+    t.string "notes"
+    t.string "time"
+    t.boolean "with_food"
+    t.string "prescribing_doctor"
+    t.string "doctor_phone"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_medications_on_user_id"
+  end
 
   create_table "pharmacies", force: :cascade do |t|
     t.string "pharm_name"
@@ -34,5 +52,6 @@ ActiveRecord::Schema.define(version: 2020_03_07_212633) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "medications", "users"
   add_foreign_key "pharmacies", "users"
 end

@@ -10,31 +10,26 @@ function EditMedication(props) {
         <input
           type="text"
           name="photo"
-        //   value={props.teacherForm.photo}
           onChange={props.handleFormChange} />
           <p>What Time?:</p>
         <input
           type="text"
           name="name"
-        //   value={props.teacherForm.name}
           onChange={props.handleFormChange} />
          <p>Pills left:</p>
              <input
           type="text"
           name="name"
-        //   value={props.teacherForm.name}
           onChange={props.handleFormChange} />
              <p>Dosage:</p>
              <input
           type="text"
           name="name"
-        //   value={props.teacherForm.name}
           onChange={props.handleFormChange} />
           <p>With food:</p>
              <select
           type="text"
           name="name"
-        //   value={props.teacherForm.name}
           onChange={props.handleFormChange}>
               <option>
                   Yes

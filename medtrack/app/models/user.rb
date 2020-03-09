@@ -2,6 +2,8 @@ class User < ApplicationRecord
     has_secure_password
 
     has_many :pharmacies
+    has_many :medications
+
 
 
     validates :username, presence: true, uniqueness: true
