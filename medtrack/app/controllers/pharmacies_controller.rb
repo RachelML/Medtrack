@@ -1,12 +1,13 @@
 class PharmaciesController < ApplicationController
-  before_action :set_user
+  # before_action :set_user
+  before_action :authorize_request
   before_action :set_pharmacy, only: [:show, :update, :destroy]
 
   # GET /pharmacies
   def index
-    # @pharmacies = Pharmacy.all
+    @pharmacies = @current_user.pharmacies
 
-    render json: @user.pharmacies
+    render json: @pharmacies
   end
 
   # GET /pharmacies/1
@@ -48,7 +49,7 @@ class PharmaciesController < ApplicationController
     end
   
     def set_user
-      @user = User.find(params[:user_id])
+      # @user = User.find(params[:user_id])
     end
   
     def set_pharmacy

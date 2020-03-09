@@ -3,7 +3,10 @@ import axios from 'axios';
 const baseUrl = 'http://localhost:3000'
 
 const api = axios.create({
-  baseURL: baseUrl
+  baseURL: baseUrl,
+  headers:{
+      authorization: localStorage.getItem('authToken')
+  }
 })
 
 export const loginUser = async (loginData) => {
@@ -36,7 +39,7 @@ const createPharmacies = async (data) => {
 
 
 const readAllPharmacies = async () => {
-    const resp = await api.get('/users/1/pharmacies')
+    const resp = await api.get('/pharmacies')
     return resp.data
   }
 
@@ -56,7 +59,7 @@ const createMedication = async (data) => {
   }
   
   const readAllMedications = async () => {
-    const resp = await api.get('/users/1/medications')
+    const resp = await api.get('/medications')
     return resp.data
   }
   

@@ -40,8 +40,14 @@ class App extends Component {
         phone_number: "",
       },
       medications: [],
+      medicationForm: {
+        brand_name: "",
+        dosage: "",
+        pills_left: "",
+        prescribing_doctor: "",
+        doctor_phone: ""
+      },
 
-  
       currentUser: null,
       authFormData: {
         username: "",
@@ -88,10 +94,25 @@ class App extends Component {
         pharm_name: "",
         address: "",
         phone_number: "",
-
       }
     }))
   }
+
+  newMedication = async (e) => {
+    e.preventDefault();
+    const medication = await createMedication(this.state.medicationForm);
+    this.setState(prevState => ({
+      medications: [...prevState.medications, medication],
+      medicationForm: {
+        brand_name: "",
+        dosage: "",
+        pills_left: "",
+        prescribing_doctor: "",
+        doctor_phone: ""
+      }
+    }))
+  }
+  
   
 
 
@@ -136,6 +157,16 @@ class App extends Component {
     this.setState(prevState => ({
       pharmacyForm: {
         ...prevState.pharmacyForm,
+        [name]: value
+      }
+    }))
+  }
+
+  handleFormChanges = (e) => {
+    const { name, value } = e.target;
+    this.setState(prevState => ({
+      medicationForm: {
+        ...prevState.medicationForm,
         [name]: value
       }
     }))
@@ -198,6 +229,15 @@ class App extends Component {
               pharmacyForm={this.state.pharmacyForm}
               newPharmacy={this.newPharmacy} />
           )} />
+            <Route
+          path="/createmedication"
+          render={() => (
+            <CreateMedication
+              handleFormChanges={this.handleFormChanges}
+              medicationForm={this.state.medicationForm}
+              newMedication={this.newMedication} />
+          )} />
+          
 
           <Route exact path="/medlist" render={() => (
                <MedList 
@@ -207,11 +247,12 @@ class App extends Component {
               pharmacyForm={this.state.pharmacyForm}
               handleFormChange={this.handleFormChange}
               newPharmacy={this.newPharmacy}
+              newMedication={this.newMedication}
               handleFormChange={this.handleFormChange}
               pharmacyForm={this.state.pharmacyForm}
               newPharmacy={this.newPharmacy}  
                     />)} />
-          <Route exact path="/createmedication" component={CreateMedication} />
+          {/* <Route exact path="/createmedication" component={CreateMedication} /> */}
           <Route exact path="/editmedication" component={EditMedication} />
 
 

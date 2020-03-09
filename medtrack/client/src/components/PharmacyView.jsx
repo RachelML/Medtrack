@@ -15,7 +15,6 @@ function PharmacyView(props) {
         <div
           key={pharm.id}
           onClick={(e) => {
-            debugger;
             props.history.push(`/pharmacies/${pharm.id}`);
             window.scrollTo(0, 0);
           }}>

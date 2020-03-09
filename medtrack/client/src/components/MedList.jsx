@@ -40,23 +40,23 @@ function MedList(props) {
           key={medication.id}
           className="med"
           onClick={(e) => {
-            debugger;
-            props.history.push(`/medications/${medication.id}`);
+            // handleClick({medication})
+            props.history.push(`/meddetail`);
             window.scrollTo(0, 0);
           }}>
-            <p className="med-name">medication name: {medication.brand_name}</p>
+            <p  className="med-name">medication name: {medication.brand_name}</p>
             <p className="med-name">pills left: {medication.pills_left}</p>
 
         </div>
       ))}
-      <div
+      {/* <div
         className="teacher-card"
         onClick={() => {
           props.history.push('/new/teacher');
           window.scrollTo(0, 0);
         }}>
        
-      </div>
+      </div> */}
     </div>
 
 

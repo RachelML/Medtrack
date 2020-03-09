@@ -1,12 +1,15 @@
 class MedicationsController < ApplicationController
-  before_action :set_user
+  # before_action :set_user
+  before_action :authorize_request
   before_action :set_medication, only: [:show, :update, :destroy]
 
   # GET /medications
   def index
     # @medications = Medication.all
 
-    render json: @user.medications
+    @medications = @current_user.medications
+
+    render json: @medications
   end
 
   # GET /medications/1
@@ -16,10 +19,10 @@ class MedicationsController < ApplicationController
 
   # POST /medications
   def create
-    @user.medications.create!(medication_params)
+    @medication = @current_user.medications.build(medication_params)
 
     if @medication.save
-      render json: @medication, status: :created, location: @medication
+      render json: @medication, status: :created
     else
       render json: @medication.errors, status: :unprocessable_entity
     end
@@ -43,7 +46,7 @@ class MedicationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
 
     def medication_params
-      params.permit(:name, :done)
+      params.require(:medication).permit(:brand_name, :done)
     end
   
     def set_user
@@ -51,7 +54,7 @@ class MedicationsController < ApplicationController
     end
   
     def set_medication
-      @medication = @user.medications.find_by!(id: params[:id]) if @user
+      # @medication = @current_user.medications.all
     end
 
     # def set_medication
