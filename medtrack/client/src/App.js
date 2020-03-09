@@ -48,7 +48,7 @@ class App extends Component {
   async componentDidMount() {
     this.props.history.push("/home")
 
-    // this.getPharmacies();
+    this.getPharmacies();
     const currentUser = await verifyUser();
     if (currentUser) {
       this.setState({ currentUser })
@@ -59,32 +59,35 @@ class App extends Component {
 
 
 
-  // getPharmacies = async () => {
-  //   const pharmacies = await readAllPharmacies();
-  //   this.setState({
-  //     pharmacies
-  //   })
-  //   console.log(this.state.pharmacies)
-  // }
+  getPharmacies = async () => {
+    const pharmacies = await readAllPharmacies();
+    this.setState({
+      pharmacies
+    })
+    console.log(this.state.pharmacies)
+  }
 
-  // newPharmacy = async (e) => {
-  //   e.preventDefault();
-  //   const pharmacy = await createPharmacies(this.state.pharmacyForm);
-  //   this.setState(prevState => ({
-  //     pharmacies: [...prevState.teachers, pharmacy],
-  //     pharmacyForm: {
-  //       pharm_name: "",
-  //       address: "",
-  //       phone_number: "",
-  //       comment: ""
-  //     }
-  //   }))
-  // }
+  newPharmacy = async (e) => {
+    e.preventDefault();
+    const pharmacy = await createPharmacies(this.state.pharmacyForm);
+    this.setState(prevState => ({
+      pharmacies: [...prevState.teachers, pharmacy],
+      pharmacyForm: {
+        pharm_name: "",
+        address: "",
+        phone_number: "",
+        comment: ""
+      }
+    }))
+  }
   
 
   handleLoginButton = () => {
     this.props.history.push("/login")
   }
+
+ 
+  
 
 
   handleRegisterButton = () => {
@@ -142,7 +145,7 @@ class App extends Component {
             {this.state.currentUser
               ?
               <>
-                <span className="header-name">{this.state.currentUser.username}</span>
+                <Link to='/medlist' className="header-name">{this.state.currentUser.username}</Link>
                 <button className="header-logout" onClick={this.handleLogout}>logout</button>
               </>
               :
@@ -182,17 +185,20 @@ class App extends Component {
 
 
           <Route exact path="/meddetail" component={MedDetail} />
-          <Route exact path="/home" component={Home} />
+          <Route exact path="/home" render={() => (
+          <Home
+          handleLoginButton={this.handleLoginButton}
+          handleRegisterButton={this.handleRegisterButton}
+           />)} />
 
-
-
-    
-          
-            {/* <PharmacyView
+           <PharmacyView
               pharmacies={this.state.pharmacies}
               pharmacyForm={this.state.pharmacyForm}
               handleFormChange={this.handleFormChange}
-              newPharmacy={this.newPharmacy} /> */}
+              newPharmacy={this.newPharmacy} />
+         
+          
+           
         
       </div>
     );

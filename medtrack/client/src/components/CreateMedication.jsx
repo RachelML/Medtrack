@@ -43,7 +43,9 @@ function CreateMedication(props) {
                   No
               </option>
           </select>
-        <button>Submit</button>
+          <div>
+        <button className="login-button">Submit</button>
+        </div>
       </form>
     </div >
   )

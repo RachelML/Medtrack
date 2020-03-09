@@ -5,8 +5,8 @@ function Home(props) {
   return (
       <div>
           <p>Easily track your medications</p>
-          <button>Sign up now</button>
-          <button>Login</button>
+          <button onClick={props.handleRegisterButton}  className="sign-in-now">Sign up now</button>
+          <button  onClick={props.handleLoginButton} className="log-in-now">Login</button>
 
       </div>
     

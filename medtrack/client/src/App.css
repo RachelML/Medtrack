@@ -195,3 +195,40 @@ header {
 
 
 }
+
+.sign-in-now {
+  text-align: center;
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgb(230,85,69);
+  margin: auto;
+  border: none
+
+}
+
+.log-in-now {
+  text-align: center;
+  width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgb(230,85,69);
+  margin: auto;
+  border: none
+
+}
+
+.create-form {
+  width: 300px;
+  margin: auto;
+  margin-top: 50px;
+  border: solid 1px rgb(135,162,206);
+  border-radius: 15px;
+}
+
+input {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  border: solid 1px rgb(135,162,206);
+}

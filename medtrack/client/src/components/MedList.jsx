@@ -52,7 +52,6 @@ function MedList(props) {
         </div>
 
 
-
    
         </div>
 
