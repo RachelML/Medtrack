@@ -17,7 +17,7 @@ class PharmaciesController < ApplicationController
 
   # POST /pharmacies
   def create
-    @user.pharmacies.create!(pharmacy_params)
+    @pharmacy = @current_user.pharmacies.build(pharmacy_params)
 
     # @pharmacy = Pharmacy.new(pharmacy_params)
 
@@ -45,15 +45,15 @@ class PharmaciesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def pharmacy_params
-      params.permit(:name, :done)
+      params.require(:pharmacy).permit(:pharm_name, :address, :phone_number, :comment, :done)
     end
   
     def set_user
-      # @user = User.find(params[:user_id])
+      @user = User.find(params[:user_id])
     end
   
     def set_pharmacy
-      @pharmacy = @user.pharmacies.find_by!(id: params[:id]) if @user
+      # @medication = @current_user.medications.all
     end
 
     # def set_pharmacy
