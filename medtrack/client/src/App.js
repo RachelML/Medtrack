@@ -18,7 +18,13 @@ import {
   readAllPharmacies,
   loginUser,
   registerUser,
-  verifyUser
+  verifyUser,
+  updatePharmacies,
+  destroyPharmacies,
+  createMedication,
+  readAllMedications,
+  updateMedication,
+  destroyMedication,
 } from './services/api-helper'
 
 import './App.css';

@@ -1,11 +1,12 @@
 class MedicationsController < ApplicationController
+  before_action :set_user
   before_action :set_medication, only: [:show, :update, :destroy]
 
   # GET /medications
   def index
-    @medications = Medication.all
+    # @medications = Medication.all
 
-    render json: @medications
+    render json: @user.medications
   end
 
   # GET /medications/1
@@ -15,7 +16,7 @@ class MedicationsController < ApplicationController
 
   # POST /medications
   def create
-    @medication = Medication.new(medication_params)
+    @user.medications.create!(medication_params)
 
     if @medication.save
       render json: @medication, status: :created, location: @medication
@@ -40,12 +41,25 @@ class MedicationsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
+    def medication_params
+      params.permit(:name, :done)
+    end
+  
+    def set_user
+      @user = User.find(params[:user_id])
+    end
+  
     def set_medication
-      @medication = Medication.find(params[:id])
+      @medication = @user.medications.find_by!(id: params[:id]) if @user
     end
 
-    # Only allow a trusted parameter "white list" through.
-    def medication_params
-      params.require(:medication).permit(:brand_name, :generic_name, :taken, :pills_left, :strength, :dosage, :notes, :time, :with_food, :prescribing_doctor, :doctor_phone, :user_id)
-    end
+    # def set_medication
+    #   @medication = Medication.find(params[:id])
+    # end
+
+    # # Only allow a trusted parameter "white list" through.
+    # def medication_params
+    #   params.require(:medication).permit(:brand_name, :generic_name, :taken, :pills_left, :strength, :dosage, :notes, :time, :with_food, :prescribing_doctor, :doctor_phone, :user_id)
+    # end
 end

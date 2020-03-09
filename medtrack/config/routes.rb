@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  resources :medications
-  resources :pharmacies
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'
-  resources :users
+
+  resources :users do 
+    resources :medications
+    resources :pharmacies
+  end
+
 
 
 end

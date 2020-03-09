@@ -51,8 +51,33 @@ const destroyPharmacies = async (id) => {
   return resp.data
 }
 
+const createMedication = async (data) => {
+    const resp = await api.post('/medications', { medication: data })
+    return resp.data
+  }
+  
+  const readAllMedications = async () => {
+    const resp = await api.get('/medications')
+    return resp.data
+  }
+  
+  const updateMedication = async (id, data) => {
+    const resp = await api.put(`/medications/${id}`, { medication: data })
+    return resp.data
+  }
+  
+  const destroyMedication = async (id) => {
+    const resp = await api.delete(`/medications/${id}`)
+    return resp.data
+  }
+  
+
 
   export {
+    createMedication,
+    readAllMedications,
+    updateMedication,
+    destroyMedication,
     readAllPharmacies,
     createPharmacies,
     updatePharmacies,
