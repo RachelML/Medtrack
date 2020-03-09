@@ -6,7 +6,7 @@ import Clock from 'react-live-clock';
 
 
 function MedList(props) {
-    console.log(props.currentUser)
+    // console.log(props.currentUser.id)
 
 
 
@@ -31,15 +31,39 @@ function MedList(props) {
              <Clock className="clock"
           format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
           ticking={true}
-         />            
-
-
-
+         />           
              </div>
+
+             <div >
+      {props.medications.map(medication => (
+        <div
+          key={medication.id}
+          className="med"
+          onClick={(e) => {
+            debugger;
+            props.history.push(`/medications/${medication.id}`);
+            window.scrollTo(0, 0);
+          }}>
+            <p className="med-name">medication name: {medication.brand_name}</p>
+            <p className="med-name">pills left: {medication.pills_left}</p>
+
+        </div>
+      ))}
+      <div
+        className="teacher-card"
+        onClick={() => {
+          props.history.push('/new/teacher');
+          window.scrollTo(0, 0);
+        }}>
+       
+      </div>
+    </div>
+
+
         <div className="add-med">
         <Link className="add-medication" to={`/createmedication`}>Add Medication</Link>
         </div>
-        <Link  to={`/meddetail`}>
+        {/* <Link  to={`/meddetail`}>
         <div className="med">
             <p className="med-time">9:00am</p>
             <p className="med-name">Lipitor</p>
@@ -47,7 +71,7 @@ function MedList(props) {
             <p className="last-taken">Last Taken: 3/3</p>
             <button className="take">take</button>
         </div>
-        </Link>
+        </Link> */}
         <div className="add-pharm">
         <Link className="add-pharmacy" to={`/createpharmacy`}>Add Pharmacy</Link>
         </div>

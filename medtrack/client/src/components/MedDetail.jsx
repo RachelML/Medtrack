@@ -5,7 +5,7 @@ import EditMedication from './EditMedication'
 
 
 function MedDetail(props) {
-    console.log(props.currentUser)
+    // console.log(props.currentUser)
 
   
 

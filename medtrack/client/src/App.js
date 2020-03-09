@@ -38,8 +38,8 @@ class App extends Component {
         pharm_name: "",
         address: "",
         phone_number: "",
-
       },
+      medications: [],
 
   
       currentUser: null,
@@ -53,7 +53,7 @@ class App extends Component {
 
   async componentDidMount() {
     this.props.history.push("/home")
-
+    this.getMedications();
     this.getPharmacies();
     const currentUser = await verifyUser();
     if (currentUser) {
@@ -61,6 +61,13 @@ class App extends Component {
       this.props.history.push("/medlist")
 
     }
+  }
+
+  getMedications = async () => {
+    const medications = await readAllMedications();
+    this.setState({
+      medications
+    })
   }
 
 
@@ -194,6 +201,7 @@ class App extends Component {
 
           <Route exact path="/medlist" render={() => (
                <MedList 
+              medications={this.state.medications}
               currentUser={this.state.currentUser}
               pharmacies={this.state.pharmacies}
               pharmacyForm={this.state.pharmacyForm}

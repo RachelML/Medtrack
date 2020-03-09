@@ -2,11 +2,14 @@ import React from 'react';
 import { withRouter } from 'react-router';
 //Unauthorized get request
 function PharmacyView(props) {
-    // console.log(props.pharmacies[0])
+    console.log(props.pharmacies[0])
+
+    
   return (
     <div>
     <p>Pharmacy View/Get users pharmacies</p>
 
+        
         
       {props.pharmacies.map(pharm => (
         <div
