@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter, Link, Redirect } from 'react-router-dom';
 import PharmacyView from './PharmacyView';
 import Clock from 'react-live-clock';
 
@@ -8,6 +8,7 @@ import Clock from 'react-live-clock';
 function MedList(props) {
     console.log(props)
 
+    
 
 
   return (
@@ -56,10 +57,14 @@ function MedList(props) {
                   props.deleteMedication(medication.id);
                 //   this.props.history.push('/medlist')
                 }}>Delete</button>
-                     <button onClick={() => {
-                //   props.deleteMedication(medication.id);
-                //   props.history.push('/editmedication')
+                    <button onClick={() => {
+                //   this.setState({
+                //     isEdit: true
+                //   })
+                props.editMeds(medication)
+                  props.history.push(`/editmedication`)
                 }}>Edit</button>
+
 
         </div>
       ))}

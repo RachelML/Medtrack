@@ -53,7 +53,8 @@ class App extends Component {
         username: "",
         email: "",
         password: ""
-      }
+      },
+      submitted: []
     };
   }
 
@@ -96,10 +97,13 @@ class App extends Component {
         phone_number: "",
       }
     }))
+    this.props.history.push("/pharmacyview")
+
   }
 
   newMedication = async (e) => {
     e.preventDefault();
+  
     const medication = await createMedication(this.state.medicationForm);
     this.setState(prevState => ({
       medications: [...prevState.medications, medication],
@@ -111,6 +115,8 @@ class App extends Component {
         doctor_phone: ""
       }
     }))
+    this.props.history.push("/medlist")
+
   }
   
   deleteMedication = async (id) => {
@@ -120,7 +126,29 @@ class App extends Component {
     }))
   }
   
+  editMedication = async () => {
+    const { medicationForm } = this.state
+    await updateMedication(medicationForm.id, medicationForm);
+    this.setState(prevState => (
+      {
+        medications: prevState.medications.map(medication => medication.id === this.state.medicaitonForm.id ? this.state.medicationForm : medication),
+      }
+    ))
+  }
 
+  editMeds = (medication) => {
+    this.setState({
+      submitted: medication
+  })
+  }
+
+  // mountEditForm = async (id) => {
+  //   const teachers = await readAllTeachers();
+  //   const teacher = teachers.find(el => el.id === parseInt(id));
+  //   this.setState({
+  //     teacherForm: teacher
+  //   });
+  // }
 
 
   handleLoginButton = () => {
@@ -190,6 +218,7 @@ class App extends Component {
   }
 
   render() {
+ 
 
     return (
       <div className="App">
@@ -244,6 +273,20 @@ class App extends Component {
               medicationForm={this.state.medicationForm}
               newMedication={this.newMedication} />
           )} />
+
+        <Route path="/editmedication" render={() => (
+                <EditMedication
+                  medication={this.state.submitted}
+                  handleFormChanges={this.props.handleFormChanges}
+                  handleSubmit={(e) => {
+                    e.preventDefault();
+                    this.props.editMedication();
+                    
+                    // this.setState({ isEdit: false })
+                    // this.props.history.push(`/teachers/${this.props.teacherForm.id}`)
+                  }}
+                  medicaitonForm={this.props.medicationForm} />
+              )} />
           
 
           <Route exact path="/medlist" render={() => (
@@ -259,10 +302,11 @@ class App extends Component {
               pharmacyForm={this.state.pharmacyForm}
               newPharmacy={this.newPharmacy}  
               deleteMedication={this.deleteMedication}
+              editMeds={this.editMeds}
 
                     />)} />
           {/* <Route exact path="/createmedication" component={CreateMedication} /> */}
-          <Route exact path="/editmedication" component={EditMedication} />
+          {/* <Route exact path="/editmedication" component={EditMedication} /> */}
 
 
           {/* <Route exact path="/meddetail" component={MedDetail} /> */}
