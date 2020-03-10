@@ -39,6 +39,7 @@ class MedicationsController < ApplicationController
 
   # DELETE /medications/1
   def destroy
+    print "test delete"
     @medication.destroy
   end
 
@@ -52,14 +53,11 @@ class MedicationsController < ApplicationController
     def set_user
       @user = User.find(params[:user_id])
     end
-  
-    def set_medication
-      # @medication = @current_user.medications.all
-    end
 
-    # def set_medication
-    #   @medication = Medication.find(params[:id])
-    # end
+
+    def set_medication
+      @medication = Medication.find(params[:id])
+    end
 
     # # Only allow a trusted parameter "white list" through.
     # def medication_params
