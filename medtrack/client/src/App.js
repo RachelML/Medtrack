@@ -126,15 +126,33 @@ class App extends Component {
     }))
   }
   
-  editMedication = async () => {
+  editMedication = async (e) => {
+    e.preventDefault()
+    let id = e.target.name
     const { medicationForm } = this.state
-    await updateMedication(medicationForm.id, medicationForm);
-    this.setState(prevState => (
-      {
-        medications: prevState.medications.map(medication => medication.id === this.state.medicaitonForm.id ? this.state.medicationForm : medication),
-      }
-    ))
+    let med = await updateMedication(id, medicationForm);
+    this.setState(
+      {medication: med.data}
+    )
   }
+
+  // editMedication = async (e) => {
+  //   e.preventDefault();
+  
+  //   const medication = await updateMedication(this.state.medicationForm);
+  //   this.setState(prevState => ({
+  //     medications: [...prevState.medications, medication],
+  //     medicationForm: {
+  //       brand_name: "",
+  //       dosage: "",
+  //       pills_left: "",
+  //       prescribing_doctor: "",
+  //       doctor_phone: ""
+  //     }
+  //   }))
+  //   this.props.history.push("/medlist")
+
+  // }
 
   editMeds = (medication) => {
     this.setState({
@@ -197,7 +215,8 @@ class App extends Component {
   }
 
   handleFormChanges = (e) => {
-    this.forceUpdate();
+    // this.forceUpdate();
+    console.log(e.target)
     const { name, value } = e.target;
     this.setState(prevState => ({
       medicationForm: {
@@ -215,6 +234,11 @@ class App extends Component {
         [name]: value
       }
     }));
+  }
+
+
+  updateMedication = (e) =>{
+
   }
 
   render() {
@@ -274,18 +298,15 @@ class App extends Component {
               newMedication={this.newMedication} />
           )} />
 
+
+{/* EDIT  */}
         <Route path="/editmedication" render={() => (
                 <EditMedication
+                handleFormChanges={this.handleFormChanges}
+                medicationForm={this.state.medicationForm}
+                editMedication={this.editMedication} 
                   medication={this.state.submitted}
-                  handleFormChanges={this.props.handleFormChanges}
-                  handleSubmit={(e) => {
-                    e.preventDefault();
-                    this.props.editMedication();
-                    
-                    // this.setState({ isEdit: false })
-                    // this.props.history.push(`/teachers/${this.props.teacherForm.id}`)
-                  }}
-                  medicaitonForm={this.props.medicationForm} />
+                  />
               )} />
           
 

@@ -2,21 +2,24 @@ import React from 'react';
 import { withRouter, Link, Redirect } from 'react-router-dom';
 import PharmacyView from './PharmacyView';
 import Clock from 'react-live-clock';
+import Moment from 'react-moment';
+
+
+
 
 
 
 function MedList(props) {
     console.log(props)
 
-    
 
-
+       
   return (
  
         <div>
 
             <div className="welcome-med">
-    
+                <p>Display Date</p>
              Hi,{props.currentUser
               ?
               <>
@@ -30,7 +33,7 @@ function MedList(props) {
              <p className="your-meds">Here are your medications</p>
 
              <Clock className="clock"
-          format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
+          format={'h:mm:ss A'}
           ticking={true}
          />           
              </div>
