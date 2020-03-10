@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { withRouter, Link } from 'react-router-dom';
 //Unauthorized get request
 function PharmacyView(props) {
     console.log(props.pharmacies[0])
@@ -7,26 +7,27 @@ function PharmacyView(props) {
     
   return (
     <div>
-    <p>Pharmacy View/Get users pharmacies</p>
+    <p>My Pharmacies</p>
 
         
         
       {props.pharmacies.map(pharm => (
-        <div
+        <div 
           key={pharm.id}
           onClick={(e) => {
-            props.history.push(`/pharmacies/${pharm.id}`);
+            // props.history.push(`/pharmacies/${pharm.id}`);
             window.scrollTo(0, 0);
           }}>
-          <h3>
-            <p>{pharm.pharm_name}</p>
-            <p>{pharm.address}</p>
-            <p>{pharm.phone_number}</p>
-          </h3>
+          <div className="pharmacy-view">
+            <p className="pharmacy-name">{pharm.pharm_name}</p>
+            <p className="pharmacy-address" >address: {pharm.address}</p>
+            <p className="pharmacy-phone">phone: {pharm.phone_number}</p>
+          </div>
         </div>
       ))}
     
-        
+    <Link className="add-medication" to={`/medlist`}>back</Link>
+
       </div>
   )
 }

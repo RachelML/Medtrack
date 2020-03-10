@@ -113,6 +113,12 @@ class App extends Component {
     }))
   }
   
+  deleteMedication = async (id) => {
+    await destroyMedication(id);
+    this.setState(prevState => ({
+      medications: prevState.medications.filter(medication => medication.id !== id)
+    }))
+  }
   
 
 
@@ -163,6 +169,7 @@ class App extends Component {
   }
 
   handleFormChanges = (e) => {
+    this.forceUpdate();
     const { name, value } = e.target;
     this.setState(prevState => ({
       medicationForm: {
@@ -251,12 +258,24 @@ class App extends Component {
               handleFormChange={this.handleFormChange}
               pharmacyForm={this.state.pharmacyForm}
               newPharmacy={this.newPharmacy}  
+              deleteMedication={this.deleteMedication}
+
                     />)} />
           {/* <Route exact path="/createmedication" component={CreateMedication} /> */}
           <Route exact path="/editmedication" component={EditMedication} />
 
 
-          <Route exact path="/meddetail" component={MedDetail} />
+          {/* <Route exact path="/meddetail" component={MedDetail} /> */}
+
+          <Route
+          path="/meddetail"
+          render={() => (
+            <MedDetail
+            deleteMedication={this.deleteMedication}
+            />
+          )} />
+
+
           <Route exact path="/home" render={() => (
           <Home
           handleLoginButton={this.handleLoginButton}

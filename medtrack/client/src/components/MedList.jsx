@@ -6,7 +6,7 @@ import Clock from 'react-live-clock';
 
 
 function MedList(props) {
-    // console.log(props.currentUser.id)
+    console.log(props)
 
 
 
@@ -33,6 +33,9 @@ function MedList(props) {
           ticking={true}
          />           
              </div>
+             <div className="add-med">
+        <Link className="add-medication" to={`/createmedication`}>Add Medication</Link>
+        </div>
 
              <div >
       {props.medications.map(medication => (
@@ -41,11 +44,22 @@ function MedList(props) {
           className="med"
           onClick={(e) => {
             // handleClick({medication})
-            props.history.push(`/meddetail`);
-            window.scrollTo(0, 0);
+            // props.history.push(`/meddetail`);
+            // window.scrollTo(0, 0);
           }}>
             <p  className="med-name">medication name: {medication.brand_name}</p>
             <p className="med-name">pills left: {medication.pills_left}</p>
+            <p className="med-name">dosage: {medication.dosage}</p>
+            <p className="med-name">Prescribing Doctor: {medication.prescribing_doctor}</p>
+
+            <button onClick={() => {
+                  props.deleteMedication(medication.id);
+                //   this.props.history.push('/medlist')
+                }}>Delete</button>
+                     <button onClick={() => {
+                //   props.deleteMedication(medication.id);
+                //   props.history.push('/editmedication')
+                }}>Edit</button>
 
         </div>
       ))}
@@ -60,9 +74,7 @@ function MedList(props) {
     </div>
 
 
-        <div className="add-med">
-        <Link className="add-medication" to={`/createmedication`}>Add Medication</Link>
-        </div>
+   
         {/* <Link  to={`/meddetail`}>
         <div className="med">
             <p className="med-time">9:00am</p>
@@ -75,8 +87,14 @@ function MedList(props) {
         <div className="add-pharm">
         <Link className="add-pharmacy" to={`/createpharmacy`}>Add Pharmacy</Link>
         </div>
+        
+        <div className="my-pharm">
+        <Link className="my-pharmacy" to={`/pharmacyview`}>My Pharmacy</Link>
+        </div>
+        
+     
 
-        <Link to={`/pharmacyview`}>My Pharmacy</Link>
+        
    
         </div>
 

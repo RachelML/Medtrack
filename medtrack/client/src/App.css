@@ -94,6 +94,8 @@ margin-right: 30px
 }
 .med-name {
   background-color: rgb(109,128,198);
+  border-radius: 10px;
+
 
 }
 .with-food {
@@ -231,4 +233,45 @@ input {
   height: 30px;
   border-radius: 5px;
   border: solid 1px rgb(135,162,206);
+}
+
+.pharmacy-view {
+  background-color: rgb(109,128,198);
+  width: 300px;
+  margin: auto;
+
+  border-radius: 20px;
+}
+
+.pharmacy-name {
+  padding-top: 20px;
+  background-color: rgb(109,128,198);
+  border-radius: 10px;
+
+}
+.pharmacy-address {
+  background-color: rgb(109,128,198);
+
+}
+.pharmacy-phone {
+  background-color: rgb(109,128,198);
+  border-radius: 10px;
+  padding-bottom: 20px;
+
+
+}
+
+.my-pharmacy {
+  width: 100px;
+  background-color: rgb(230,85,69);
+
+}
+
+.my-pharm {
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  /* border-radius: 100px; */
+  background-color: rgb(230,85,69);
+  margin: auto;
 }
