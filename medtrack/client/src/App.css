@@ -55,7 +55,7 @@ margin-right: 30px
   background-color: rgb(230,85,69);
   float: right;
   margin-right: 60px;
-  margin-top: 10px;
+  margin-top: 20px;
 
 }
 .add-medication {
@@ -78,10 +78,10 @@ margin-right: 30px
   border-radius: 5px;
   background-color: rgb(230,85,69);
   margin: auto;
-  float: left;
+  float: right;
   text-align: center;
   margin-top: 20px;
-  margin-left: 60px
+  margin-right: 60px
 
 }
 
@@ -92,19 +92,19 @@ margin-right: 30px
 }
 
 .med-time {
-  /* background-color: rgb(109,128,198); */
+  background-color: rgb(109,128,198);
   border-radius: 10px;
   padding-top: 20px;
-  margin-left: 100px;
+  margin-left: 50px;
   margin-top: 60px;
-  display: flex;
+  /* display: flex; */
 
 
 }
 
 .med-name {
   background-color: rgb(109,128,198);
-  margin-left: 100px;
+  margin-left: 50px;
   text-align: left;
   font-size: 25px;
   margin-top: -10px;
@@ -126,7 +126,7 @@ margin-right: 20px
 .med-doc {
   background-color: rgb(109,128,198);
   text-align: left;
-    margin-left: 100px;
+    margin-left: 50px;
 }
 
 .with-food {
@@ -299,16 +299,24 @@ input {
 .my-pharmacy {
   width: 100px;
   background-color: rgb(230,85,69);
+  margin: auto
+
 
 }
 
 .my-pharm {
   text-align: center;
-  width: 100px;
+  width: 150px;
   height: 40px;
-  /* border-radius: 100px; */
+  margin-top: 30px;
+  border-radius: 5px;
   background-color: rgb(230,85,69);
   margin: auto;
+  display: flex;
+  margin-top: 20px;
+  margin-left: 60px;
+
+  float: left
 }
 
 .date {
@@ -318,7 +326,7 @@ input {
 
 .med-head {
   float: left;
-  padding-left: 70px;
+  margin-left: 70px;
   font-size: 20px;
 }
 
@@ -339,4 +347,27 @@ input {
   margin-right: 20px;
   background-color: rgb(109,128,198);
 
+}
+
+.back-pharmacy {
+  background-color: rgb(230,85,69);
+  margin: auto
+
+}
+
+.back-pharm {
+  text-align: center;
+  width: 150px;
+  height: 40px;
+  margin-top: 30px;
+  border-radius: 5px;
+  background-color: rgb(230,85,69);
+  margin: auto;
+  display: flex;
+  margin-top: 20px;
+}
+
+.pop-ty {
+  background-color: white;
+  color: black
 }

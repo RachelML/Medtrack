@@ -26,7 +26,7 @@ function PharmacyView(props) {
         </div>
       ))}
     
-    <Link className="add-medication" to={`/medlist`}>back</Link>
+    <p className="back-pharm"><Link className="back-pharmacy" to={`/medlist`}>back</Link></p>
 
       </div>
   )

@@ -43,7 +43,7 @@ class App extends Component {
       medicationForm: {
         brand_name: "",
         dosage: "",
-        pills_left: "",
+        time: "",
         prescribing_doctor: "",
         doctor_phone: ""
       },
@@ -111,7 +111,7 @@ class App extends Component {
       medicationForm: {
         brand_name: "",
         dosage: "",
-        pills_left: "",
+        time: "",
         prescribing_doctor: "",
         doctor_phone: ""
       }
@@ -137,23 +137,7 @@ class App extends Component {
     )
   }
 
-  // editMedication = async (e) => {
-  //   e.preventDefault();
-  
-  //   const medication = await updateMedication(this.state.medicationForm);
-  //   this.setState(prevState => ({
-  //     medications: [...prevState.medications, medication],
-  //     medicationForm: {
-  //       brand_name: "",
-  //       dosage: "",
-  //       pills_left: "",
-  //       prescribing_doctor: "",
-  //       doctor_phone: ""
-  //     }
-  //   }))
-  //   this.props.history.push("/medlist")
 
-  // }
 
   editMeds = (medication) => {
     this.setState({

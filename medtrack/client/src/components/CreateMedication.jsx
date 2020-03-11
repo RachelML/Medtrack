@@ -18,11 +18,11 @@ function CreateMedication(props) {
           name="dosage"
           value={props.medicationForm.dosage}
           onChange={props.handleFormChanges} />
-          <p>pills left:</p>
+          <p>scheduled time:</p>
         <input
           type="text"
-          name="pills_left"
-          value={props.medicationForm.pills_left}
+          name="time"
+          value={props.medicationForm.time}
           onChange={props.handleFormChanges} />
         <p>Prescribing Doctor:</p>
            <input

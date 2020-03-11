@@ -4,6 +4,7 @@ import PharmacyView from './PharmacyView';
 import Clock from 'react-live-clock';
 import Moment from 'react-moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Popup from "reactjs-popup";
 
 
 
@@ -22,13 +23,24 @@ function MedList(props) {
           <p>{currDate}</p>
         )
     }
+
+    function LastTaken() {
+        var tempDate = new Date();
+        var date = (tempDate.getMonth()+1) + '-' + tempDate.getDate() + '-' + tempDate.getFullYear()  ;
+        const currDate = "last taken: "+date;
+        return (
+
+            <p>{currDate}</p>
+          )
+
+    }
  
        
   return (
 
         <div>
                          <MyFunction />
-
+             
 
 <div className="welcome-med">
              Hi, {props.currentUser
@@ -62,20 +74,29 @@ function MedList(props) {
           key={medication.id}
           className="med"
           onClick={(e) => {
-            // handleClick({medication})
-            // props.history.push(`/meddetail`);
-            // window.scrollTo(0, 0);
+         
           }}>
-            <p className="med-time">9:00am</p>
-            <p className="med-pills">pills left: {medication.pills_left}</p>
-
+            <p className="med-time">{medication.time}</p>
             <p  className="med-name">{medication.brand_name} {medication.dosage}</p>
-            <p className="take-container"><button className="take">take</button></p>
+            <p className="take-container"> <Popup 
+    trigger={<button className="take" onClick={() => {
+return (
+    <div>
+    <LastTaken />
+    </div>
+
+)     
+      }}> take </button>}
+    modal
+    closeOnDocumentClick
+  >
+    <p className="pop-ty"> Thank you for taking your medication today! </p>
+  </Popup></p>
+
         <p className="med-doc">{medication.prescribing_doctor} : {medication.doctor_phone}</p>
 
             <button onClick={() => {
                   props.deleteMedication(medication.id);
-                //   this.props.history.push('/medlist')
                 }}>Delete</button>
                     <button onClick={() => {
                 //   this.setState({
@@ -85,30 +106,14 @@ function MedList(props) {
                   props.history.push(`/editmedication`)
                 }}>Edit</button>
 
-
         </div>
       ))}
-      {/* <div
-        className="teacher-card"
-        onClick={() => {
-          props.history.push('/new/teacher');
-          window.scrollTo(0, 0);
-        }}>
-       
-      </div> */}
+   
     </div>
 
 
    
-        {/* <Link  to={`/meddetail`}>
-        <div className="med">
-            <p className="med-time">9:00am</p>
-            <p className="med-name">Lipitor</p>
-            <p className="with-food">take with food</p>
-            <p className="last-taken">Last Taken: 3/3</p>
-            <button className="take">take</button>
-        </div>
-        </Link> */}
+      
         <div className="add-pharm">
         <Link className="add-pharmacy" to={`/createpharmacy`}>Add Pharmacy</Link>
         </div>

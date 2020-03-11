@@ -22,13 +22,13 @@ function EditMedication(props) {
 
           value={props.medicationForm.dosage}
           onChange={props.handleFormChanges} />
-          <p>pills left:</p>
+          <p>scheduled time:</p>
         <input
           type="text"
-          name="pills_left"
-          placeholder= {props.medication.pills_left}
+          name="time"
+          placeholder= {props.medication.time}
 
-          value={props.medicationForm.pills_left}
+          value={props.medicationForm.time}
           onChange={props.handleFormChanges} />
         <p>Prescribing Doctor:</p>
            <input

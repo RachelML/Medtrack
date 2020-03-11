@@ -47,7 +47,7 @@ class MedicationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
 
     def medication_params
-      params.require(:medication).permit(:brand_name, :dosage, :pills_left, :prescribing_doctor, :doctor_phone, :done)
+      params.require(:medication).permit(:brand_name, :dosage, :time, :prescribing_doctor, :doctor_phone, :done)
     end
   
     def set_user
