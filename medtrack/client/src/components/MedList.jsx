@@ -89,7 +89,7 @@ function MedList(props) {
           }}>
             <p className="med-time">{medication.time}</p>
             <p  className="med-name">{medication.brand_name} {medication.dosage}</p>
-            <p className="take-container"> <Popup 
+            <p className="take-container"> <Popup className="pop"
     trigger={<button className="take" onClick={() => {
 LastTaken()
       }}> take </button>}

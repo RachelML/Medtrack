@@ -7,7 +7,6 @@ function Home(props) {
           <p>Easily track your medications</p>
           <button onClick={props.handleRegisterButton}  className="sign-in-now">Sign up now</button>
           <button  onClick={props.handleLoginButton} className="log-in-now">Login</button>
-
       </div>
     
   )

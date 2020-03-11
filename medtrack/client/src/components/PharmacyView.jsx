@@ -26,7 +26,7 @@ function PharmacyView(props) {
         </div>
       ))}
     
-    <p className="back-pharm"><Link className="back-pharmacy" to={`/medlist`}>back</Link></p>
+    <p style={{ textDecoration: 'none'}} className="back-pharm"><Link style={{ textDecoration: 'none'}} className="back-pharmacy" to={`/medlist`}>back</Link></p>
 
       </div>
   )

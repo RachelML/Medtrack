@@ -163,6 +163,8 @@ class App extends Component {
     const currentUser = await loginUser(this.state.authFormData);
     this.setState({ currentUser });
     this.props.history.push("/medlist")
+    window.location.reload();
+
   }
 
   handleRegister = async (e) => {
@@ -170,6 +172,7 @@ class App extends Component {
     const currentUser = await registerUser(this.state.authFormData);
     this.setState({ currentUser });
         this.props.history.push("/medlist")
+        window.location.reload();
 
   }
 
