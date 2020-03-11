@@ -80,12 +80,7 @@ function MedList(props) {
             <p  className="med-name">{medication.brand_name} {medication.dosage}</p>
             <p className="take-container"> <Popup 
     trigger={<button className="take" onClick={() => {
-return (
-    <div>
-    <LastTaken />
-    </div>
-
-)     
+LastTaken()
       }}> take </button>}
     modal
     closeOnDocumentClick
@@ -112,7 +107,7 @@ return (
     </div>
 
 
-   
+                
       
         <div className="add-pharm">
         <Link className="add-pharmacy" to={`/createpharmacy`}>Add Pharmacy</Link>

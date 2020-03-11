@@ -128,7 +128,7 @@ class App extends Component {
   }
   
   editMedication = async (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     let id = e.target.name
     const { medicationForm } = this.state
     let med = await updateMedication(id, medicationForm);
