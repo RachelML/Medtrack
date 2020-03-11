@@ -56,18 +56,18 @@ margin-right: 30px
   width: 40px;
   height: 40px;
   border-radius: 100px;
-  background-color: rgb(230,85,69);
+  background-color: rgb(208,45,65);
   /* float: left; */
   margin-left: 170px;
   margin-top: -50px;
 
 }
 .add-medication {
-  background-color: rgb(230,85,69);
+  background-color: rgb(208,45,65);
   border: none;
 }
 .add-icon {
-  background-color: rgb(230,85,69);
+  background-color: rgb(208,45,65);
 margin-top: 12px;
 }
 
@@ -85,7 +85,7 @@ margin-top: 12px;
   height: 40px;
   margin-top: 30px;
   border-radius: 100px;
-  background-color: rgb(230,85,69);
+  background-color: rgb(208,45,65);
   margin: auto;
   display: flex;
   margin-top: 20px;
@@ -176,7 +176,7 @@ header {
 }
 
 .login-button {
-  background-color: rgb(230,85,69);
+  background-color: rgb(208,45,65);
   border: none;
   width: 200px;
   height: 30px;
@@ -202,6 +202,16 @@ header {
   border-radius: 10px;
   /* margin-left: 10px; */
   border: solid 1px rgb(135,162,206);
+}
+
+.header-login:hover {
+  background-color: rgb(135,162,206);
+}
+.header-register:hover{
+  background-color: rgb(135,162,206);
+}
+.header-logout:hover{
+  background-color: rgb(135,162,206);
 }
 .header-register {
   border: none;
@@ -248,20 +258,26 @@ header {
   width: 300px;
   height: 40px;
   border-radius: 5px;
-  background-color: rgb(230,85,69);
+  border: solid 2px rgb(135,162,206);
   margin: auto;
-  border: none
+  margin: 20px;
 
 }
 
+.sign-in-now:hover {
+background-color: rgb(135,162,206);
+}
+
+.log-in-now:hover {
+  background-color: rgb(135,162,206);
+}
 .log-in-now {
   text-align: center;
   width: 300px;
   height: 40px;
   border-radius: 5px;
-  background-color: rgb(230,85,69);
+  border: solid 2px rgb(135,162,206);
   margin: auto;
-  border: none
 
 }
 
@@ -309,7 +325,7 @@ input {
 
 .my-pharmacy {
   width: 100px;
-  background-color: rgb(230,85,69);
+  background-color: rgb(208,45,65);
   margin: auto
 
 
@@ -320,7 +336,7 @@ input {
   height: 40px;
   margin-top: 30px;
   border-radius: 5px;
-  background-color: rgb(230,85,69);
+  background-color: rgb(208,45,65);
   margin: auto;
   display: flex;
   margin-top: 20px;
@@ -363,7 +379,7 @@ input {
 }
 
 .back-pharmacy {
-  background-color: rgb(230,85,69);
+  background-color: rgb(208,45,65);
   margin: auto
 
 }
@@ -374,7 +390,7 @@ input {
   height: 40px;
   margin-top: 30px;
   border-radius: 5px;
-  background-color: rgb(230,85,69);
+  background-color: rgb(208,45,65);
   margin: auto;
   display: flex;
   margin-top: 20px;
@@ -405,4 +421,44 @@ input {
   background-color: rgb(109,128,198);
   font-size: 20px;
 
+}
+
+.bottleone {
+width: 20%;
+margin: 10px;
+}
+.bottletwo {
+  width: 18%;
+  margin: 10px;
+
+
+}
+
+
+.bottlethree {
+  width: 20%;
+  margin: 10px;
+
+
+
+}
+
+.bottlefour {
+  width: 20%;
+
+  margin: 10px;
+
+
+}
+
+.bottle-container {
+max-width: 700px;
+margin: auto
+;}
+
+.home-container{
+margin-top: 130px;
+}
+.slogan{
+  font-size: 40px;
 }
