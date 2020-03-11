@@ -30,7 +30,7 @@ margin-right: 30px
   text-align: center;
   padding: 40px;
   background-color: rgb(60, 71, 121);
-  width: 300px;
+  width: 200px;
   margin: auto;
   border-radius: 10px;
 
@@ -53,12 +53,15 @@ margin-right: 30px
   height: 40px;
   border-radius: 5px;
   background-color: rgb(230,85,69);
-  margin: auto;
+  float: right;
+  margin-right: 60px;
+  margin-top: 10px;
 
 }
 .add-medication {
   background-color: rgb(230,85,69);
   border: none;
+  
 
 }
 
@@ -75,8 +78,10 @@ margin-right: 30px
   border-radius: 5px;
   background-color: rgb(230,85,69);
   margin: auto;
-
+  float: left;
   text-align: center;
+  margin-top: 20px;
+  margin-left: 60px
 
 }
 
@@ -87,17 +92,43 @@ margin-right: 30px
 }
 
 .med-time {
-  background-color: rgb(109,128,198);
+  /* background-color: rgb(109,128,198); */
   border-radius: 10px;
+  padding-top: 20px;
+  margin-left: 100px;
+  margin-top: 60px;
+  display: flex;
 
 
 }
+
 .med-name {
   background-color: rgb(109,128,198);
+  margin-left: 100px;
+  text-align: left;
+  font-size: 25px;
+  margin-top: -10px;
+}
+.med-time {
+  background-color: rgb(109,128,198);
   border-radius: 10px;
+  text-align: left;
+}
+.med-pills {
+  background-color: rgb(109,128,198);
+  display: flex;
+margin-top: -35px;
+float: right;
+margin-right: 20px
 
 
 }
+.med-doc {
+  background-color: rgb(109,128,198);
+  text-align: left;
+    margin-left: 100px;
+}
+
 .with-food {
   background-color: rgb(109,128,198);
 
@@ -122,6 +153,7 @@ header {
 
 .title {
   background-color: rgb(46,58,97);
+  font-size: 30px;
 }
 
 .login {
@@ -155,14 +187,15 @@ header {
 
 .header-login {
   border: none;
-  width: 100px;
+  width: 80px;
   height: 30px;
   border-radius: 10px;
+  /* margin-left: 10px; */
   border: solid 1px rgb(135,162,206);
 }
 .header-register {
   border: none;
-  width: 100px;
+  width: 80px;
   height: 30px;
   border-radius: 10px;
   margin-left: 40px;
@@ -172,8 +205,9 @@ header {
 
 .header-logout {
   border: none;
-  width: 100px;
+  width: 80px;
   height: 30px;
+  margin-left: -60px;
   border-radius: 10px;
   border: solid 1px rgb(135,162,206);
 }
@@ -183,7 +217,8 @@ header {
 }
 .header-name {
   background-color: rgb(46,58,97);
-  padding-right: 20px;
+  margin-right: 70px;
+
 
 }
 
@@ -193,7 +228,7 @@ header {
   border-radius: 100px;
   background-color: rgb(245,197,194);
   color:  rgb(46,58,97);
-  border: none
+  border: none;
 
 
 }
@@ -274,4 +309,34 @@ input {
   /* border-radius: 100px; */
   background-color: rgb(230,85,69);
   margin: auto;
+}
+
+.date {
+  background-color: rgb(109,128,198);
+
+}
+
+.med-head {
+  float: left;
+  padding-left: 70px;
+  font-size: 20px;
+}
+
+.title-header {
+  margin-top: 30px;
+}
+
+.logout-name-combo{
+  margin-right: -20px;
+  background-color: rgb(46,58,97);
+
+}
+
+.take-container {
+  display: flex;
+  float: right;
+  margin-top: -60px;
+  margin-right: 20px;
+  background-color: rgb(109,128,198);
+
 }

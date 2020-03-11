@@ -3,6 +3,8 @@ import { withRouter, Link, Redirect } from 'react-router-dom';
 import PharmacyView from './PharmacyView';
 import Clock from 'react-live-clock';
 import Moment from 'react-moment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 
 
@@ -12,15 +14,24 @@ import Moment from 'react-moment';
 function MedList(props) {
     console.log(props)
 
-
+    function MyFunction() {
+        var tempDate = new Date();
+        var date = (tempDate.getMonth()+1) + '-' + tempDate.getDate() + '-' + tempDate.getFullYear()  ;
+        const currDate = "Today is "+date;
+        return (
+          <p>{currDate}</p>
+        )
+    }
+ 
        
   return (
- 
-        <div>
 
-            <div className="welcome-med">
-                <p>Display Date</p>
-             Hi,{props.currentUser
+        <div>
+                         <MyFunction />
+
+
+<div className="welcome-med">
+             Hi, {props.currentUser
               ?
               <>
                 <span className="user-render">{props.currentUser.username} </span>
@@ -31,17 +42,21 @@ function MedList(props) {
             }
         
              <p className="your-meds">Here are your medications</p>
-
+             
              <Clock className="clock"
           format={'h:mm:ss A'}
           ticking={true}
-         />           
+         />    
+       
              </div>
+             <p className="med-head">Medication</p>
+
              <div className="add-med">
         <Link className="add-medication" to={`/createmedication`}>Add Medication</Link>
         </div>
 
              <div >
+                 
       {props.medications.map(medication => (
         <div
           key={medication.id}
@@ -51,10 +66,12 @@ function MedList(props) {
             // props.history.push(`/meddetail`);
             // window.scrollTo(0, 0);
           }}>
-            <p  className="med-name">medication name: {medication.brand_name}</p>
-            <p className="med-name">pills left: {medication.pills_left}</p>
-            <p className="med-name">dosage: {medication.dosage}</p>
-            <p className="med-name">Prescribing Doctor: {medication.prescribing_doctor}</p>
+            <p className="med-time">9:00am</p>
+            <p className="med-pills">pills left: {medication.pills_left}</p>
+
+            <p  className="med-name">{medication.brand_name} {medication.dosage}</p>
+            <p className="take-container"><button className="take">take</button></p>
+        <p className="med-doc">{medication.prescribing_doctor} : {medication.doctor_phone}</p>
 
             <button onClick={() => {
                   props.deleteMedication(medication.id);

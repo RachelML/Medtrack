@@ -44,7 +44,7 @@ function EditMedication(props) {
           name="doctor_phone"
           placeholder= {props.medication.doctor_phone}
 
-        //   value={props.medicationForm.doctor_phone}
+          value={props.medicationForm.doctor_phone}
           onChange={props.handleFormChanges} />
         <button className="login-button">update</button>
       </form>

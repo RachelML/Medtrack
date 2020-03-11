@@ -59,6 +59,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
+
     this.props.history.push("/home")
     this.getMedications();
     this.getPharmacies();
@@ -160,14 +161,7 @@ class App extends Component {
   })
   }
 
-  // mountEditForm = async (id) => {
-  //   const teachers = await readAllTeachers();
-  //   const teacher = teachers.find(el => el.id === parseInt(id));
-  //   this.setState({
-  //     teacherForm: teacher
-  //   });
-  // }
-
+ 
 
   handleLoginButton = () => {
     this.props.history.push("/login")
@@ -215,7 +209,7 @@ class App extends Component {
   }
 
   handleFormChanges = (e) => {
-    // this.forceUpdate();
+    this.forceUpdate();
     console.log(e.target)
     const { name, value } = e.target;
     this.setState(prevState => ({
@@ -237,10 +231,7 @@ class App extends Component {
   }
 
 
-  updateMedication = (e) =>{
-
-  }
-
+ 
   render() {
  
 
@@ -248,7 +239,7 @@ class App extends Component {
       <div className="App">
         <header className="header">
           <img className="pill" src={logopill} />
-          <h1><Link style={{ textDecoration: 'none'}} className="title" to='/home' onClick={() => this.setState({
+          <h1 className="title-header"><Link style={{ textDecoration: 'none'}} className="title" to='/home' onClick={() => this.setState({
             pharmacyForm: {
               pharm_name: "",
               address: "",
@@ -258,10 +249,10 @@ class App extends Component {
           <div className="login-header">
             {this.state.currentUser
               ?
-              <>
+              <div className="logout-name-combo">
                 <Link to='/medlist' className="header-name">{this.state.currentUser.username}</Link>
                 <button className="header-logout" onClick={this.handleLogout}>logout</button>
-              </>
+              </div>
               :
               <div className="header-button">
               <button className="header-login"  onClick={this.handleLoginButton}>Login</button>
