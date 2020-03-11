@@ -22,7 +22,7 @@ function EditMedication(props) {
 
           value={props.medicationForm.dosage}
           onChange={props.handleFormChanges} />
-          <p>scheduled time:</p>
+          <p>Scheduled time:</p>
         <input
           type="text"
           name="time"

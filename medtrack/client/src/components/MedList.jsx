@@ -21,8 +21,11 @@ function MedList(props) {
     console.log(props)
 
     function MyFunction() {
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
         var tempDate = new Date();
-        var date = (tempDate.getMonth()+1) + '-' + tempDate.getDate() + '-' + tempDate.getFullYear()  ;
+        var date = monthNames[tempDate.getMonth()] + ' ' + tempDate.getDate() + ' ' + tempDate.getFullYear()  ;
         const currDate = "Today is "+date;
         return (
           <p>{currDate}</p>
@@ -118,7 +121,7 @@ LastTaken()
 
 
     <div className="my-pharm">
-        <Link className="my-pharmacy" to={`/pharmacyview`}>My Pharmacy</Link>
+        <Link style={{ textDecoration: 'none'}} className="my-pharmacy" to={`/pharmacyview`}>My Pharmacy</Link>
         </div>
       
         <div className="add-pharm">

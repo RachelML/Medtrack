@@ -234,7 +234,7 @@ class App extends Component {
             {this.state.currentUser
               ?
               <div className="logout-name-combo">
-                <Link to='/medlist' className="header-name">{this.state.currentUser.username}</Link>
+                <Link style={{ textDecoration: 'none'}} to='/medlist' className="header-name">{this.state.currentUser.username}</Link>
                 <button className="header-logout" onClick={this.handleLogout}>logout</button>
               </div>
               :
