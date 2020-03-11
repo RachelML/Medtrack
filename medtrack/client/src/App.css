@@ -49,40 +49,45 @@ margin-right: 30px
 
 .add-med {
   text-align: center;
-  width: 100px;
+  width: 40px;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 100px;
   background-color: rgb(230,85,69);
-  float: right;
-  margin-right: 60px;
-  margin-top: 20px;
+  float: left;
+  margin-left: 60px;
+  margin-top: 10px;
 
 }
 .add-medication {
   background-color: rgb(230,85,69);
   border: none;
-  
-
+}
+.add-icon {
+  background-color: rgb(230,85,69);
+margin-top: 12px;
 }
 
 .add-pharmacy {
-  background-color: rgb(230,85,69);
+  background-color: yellow;
   border: none;
-
+  margin-left: 13px;
+  height:0px
 }
 
 .add-pharm {
+  
   text-align: center;
-  width: 100px;
+  width: 40px;
   height: 40px;
-  border-radius: 5px;
+  margin-top: 30px;
+  border-radius: 100px;
   background-color: rgb(230,85,69);
   margin: auto;
-  float: right;
-  text-align: center;
+  display: flex;
   margin-top: 20px;
-  margin-right: 60px
+  margin-left: 20px;
 
+  float: left
 }
 
 .med {
@@ -370,4 +375,27 @@ input {
 .pop-ty {
   background-color: white;
   color: black
+}
+
+.edit-icon {
+  background-color: rgb(109,128,198);
+
+  border-radius: 100px;
+  border: none;
+  margin-bottom: 10px;
+
+}
+
+.delete-icon {
+  background-color: rgb(109,128,198);
+  border-radius: 100px;
+  border: none;
+  margin-bottom: 10px;
+
+}
+
+.icon {
+  background-color: rgb(109,128,198);
+  font-size: 20px;
+
 }

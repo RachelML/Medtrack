@@ -4,6 +4,11 @@ import PharmacyView from './PharmacyView';
 import Clock from 'react-live-clock';
 import Moment from 'react-moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit } from '@fortawesome/free-solid-svg-icons'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+
+
 import Popup from "reactjs-popup";
 
 
@@ -39,6 +44,8 @@ function MedList(props) {
   return (
 
         <div>
+        
+
                          <MyFunction />
              
 
@@ -64,7 +71,8 @@ function MedList(props) {
              <p className="med-head">Medication</p>
 
              <div className="add-med">
-        <Link className="add-medication" to={`/createmedication`}>Add Medication</Link>
+        <Link className="add-medication" to={`/createmedication`}><FontAwesomeIcon className="add-icon" icon={faPlus} />
+</Link>
         </div>
 
              <div >
@@ -89,17 +97,19 @@ LastTaken()
   </Popup></p>
 
         <p className="med-doc">{medication.prescribing_doctor} : {medication.doctor_phone}</p>
-
-            <button onClick={() => {
-                  props.deleteMedication(medication.id);
-                }}>Delete</button>
-                    <button onClick={() => {
+        <button className="edit-icon" onClick={() => {
                 //   this.setState({
                 //     isEdit: true
                 //   })
                 props.editMeds(medication)
                   props.history.push(`/editmedication`)
-                }}>Edit</button>
+                }}><FontAwesomeIcon className="icon"icon={faEdit} />
+                </button>
+            <button className="delete-icon" onClick={() => {
+                  props.deleteMedication(medication.id);
+                }}><FontAwesomeIcon className="icon" icon={faTimes} />
+                </button>
+                    
 
         </div>
       ))}
@@ -107,15 +117,16 @@ LastTaken()
     </div>
 
 
-                
-      
-        <div className="add-pharm">
-        <Link className="add-pharmacy" to={`/createpharmacy`}>Add Pharmacy</Link>
-        </div>
-        
-        <div className="my-pharm">
+    <div className="my-pharm">
         <Link className="my-pharmacy" to={`/pharmacyview`}>My Pharmacy</Link>
         </div>
+      
+        <div className="add-pharm">
+        <Link className="add-pharmacy" to={`/createpharmacy`}><FontAwesomeIcon className="add-icon" icon={faPlus} />
+</Link>
+        </div>
+        
+        
         
      
 
