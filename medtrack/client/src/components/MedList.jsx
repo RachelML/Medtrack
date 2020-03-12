@@ -80,25 +80,26 @@ function MedList(props) {
           }}>
             <p className="med-time">{medication.time}</p>
             <p  className="med-name">{medication.brand_name} {medication.dosage}</p>
+
+
             <p className="take-container"> <Popup className="pop"
     trigger={<button className="take" onClick={() => {
 
-        // -----------------------------------------------------help
         props.takeMed()
-        console.log(props)
       }}> take </button>}
     modal
     closeOnDocumentClick
   >
     <p className="pop-ty"> Thank you for taking your medication today! </p>
   </Popup></p>
-  {/* ---------------------------------help */}
-    <p>{props.take_time}</p>
+  {/* <button onClick={() => {
+props.takeMed()
+props.newFunc(medication)
+console.log(props)
+}}> test</button> */}
         <p className="med-doc">{medication.prescribing_doctor} : {medication.doctor_phone}</p>
         <button className="edit-icon" onClick={() => {
-                //   this.setState({
-                //     isEdit: true
-                //   })
+             
                 props.editMeds(medication)
                   props.history.push(`/editmedication`)
                 }}><FontAwesomeIcon className="icon"icon={faEdit} />

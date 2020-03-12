@@ -47,7 +47,10 @@ class App extends Component {
         dosage: "",
         time: "",
         prescribing_doctor: "",
-        doctor_phone: ""
+        doctor_phone: "",
+        notes: "",
+        updated_at: ""
+
       },
 
       currentUser: null,
@@ -82,14 +85,15 @@ class App extends Component {
 
  
 
-  takeMed() {
+  takeMed = () => {
     var tempDate = new Date();
     var date = (tempDate.getMonth()+1) + '-' + tempDate.getDate() + '-' + tempDate.getFullYear()  ;
     const currDate = "last taken: "+date;
     this.setState({
-      take_time: {currDate}
+      take_time: currDate
+       
     });
-
+   console.log(this.state.take_time)
 }
 
 
@@ -154,10 +158,63 @@ class App extends Component {
     let id = e.target.name
     const { medicationForm } = this.state
     let med = await updateMedication(id, medicationForm);
+    
     this.setState(
       {medication: med.data}
     )
   }
+//  takeMedication = () => {
+//  console.log(this.state.medicationForm)
+//  }
+//   newFunc = (e) => {
+//     console.log(e)
+//     this.setState({
+//       medicationForm: {
+//         brand_name: e.brand_name,
+//         dosage: e.dosage,
+//         time: e.time,
+//         notes: this.state.take_time,
+//         prescribing_doctor: e.prescribing_doctor,
+//         doctor_phone: e.doctor_phone
+//       }
+//     })
+    // this.setState(prev_state =>({
+    //   medicationForm: {
+    //     ...prev_state.medicationForm,
+    //     notes: this.state.take_time,
+    //   } 
+    // }), this.takeMedication(e) )
+    // console.log(this.state.medicationForm)
+
+  // let id = e.id
+  // const { medicationForm } = this.state
+  // let med = await updateMedication(id, medicationForm);
+//   this.takeMedication()
+// }
+
+  // takeMedication = async (e) => {
+  //   e.preventDefault()
+  //   console.log(e)
+  //   let id = e.id
+  //   const { medicationForm } = this.state
+  //   let med = await updateMedication(id, medicationForm);
+  //   this.setState(
+  //     {medication: med.data}
+  //   )
+    // this.setState(prev_state =>({
+    //   medicationForm: {
+    //     ...prev_state.medicationForm,
+    //     notes: this.state.take_time,
+       
+    //   } 
+    // }), this.newFunc(e) )
+    // this.setState(
+    //   {medication: med.data}
+    // )
+    // return (
+    // <div>{this.state.medicationForm.notes}</div>
+    // )
+  // }
 
 
 
@@ -317,7 +374,9 @@ class App extends Component {
           
 
           <Route exact path="/medlist" render={() => (
-               <MedList 
+               <MedList
+              newFunc={this.newFunc}
+              takeMedication={this.takeMedication}
               take_time={this.state.take_time}
               takeMed={this.takeMed}
               medications={this.state.medications}
