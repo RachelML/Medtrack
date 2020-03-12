@@ -17,9 +17,6 @@ function Home(props) {
           <img className="bottlethree" src={bottlethree} />
           <img className="bottlefour" src={bottleone} />
           </div>
-
-
-
           <button onClick={props.handleRegisterButton}  className="sign-in-now">Sign up now</button>
           <button  onClick={props.handleLoginButton} className="log-in-now">Login</button>
 

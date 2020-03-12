@@ -14,7 +14,7 @@ MedTrack MVP will allow a user to login and add medications and a pharmacy to th
 ## MVP Goals
 - User authentication with sign up, login, logout.
 - Create, read, update, delete medication info and pharmacy info
-- "take" button to decrement pill count by 1 and alert user pill taken(css)
+- "take" button to notify user pill is taken 
 - button to view medication details
 - button to view pharmacy details
 
@@ -28,6 +28,8 @@ MedTrack MVP will allow a user to login and add medications and a pharmacy to th
 |     Axios        | fetch Api data                             |
 |  react-moment    | a library to easily display current dates  |
 |  react-calendar  | calendar library                           |
+|  font-awesome  | icon library                           |
+
 
 
 
@@ -98,15 +100,15 @@ MEDICATION component CRUD functionality
 
 | Component | Estimated Time | Actual Time |
 | --- | :---: | :---: |
-| css| 12hrs |  |
-| backend set-up | 6hrs | |
-| Front-End Routing | 7hrs | |
-| setting up components | 5 hrs |  |
-| connecting front and backend | 5 hrs | |
-| passing props/ raising state | 8hrs |  |
-| pseudocoding | 4hrs |  |
-| troubleshooting | 4hrs | |
-| Total | 50hrs |  |
+| css| 12hrs | 12hrs |
+| backend set-up | 6hrs | 8hrs |
+| Front-End Routing | 7hrs | 2hrs |
+| setting up components | 5 hrs | 2 |
+| connecting front and backend | 5 hrs | 7hrs |
+| passing props/ raising state | 8hrs | 1hr |
+| pseudocoding | 4hrs | 4hrs |
+| troubleshooting | 4hrs |6hrs |
+| Total | 50hrs | 42hrs |
 
 ## Schedule
 |  Day   | Deliverables                              |

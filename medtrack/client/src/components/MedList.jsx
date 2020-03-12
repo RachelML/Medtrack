@@ -22,119 +22,119 @@ function MedList(props) {
 
     function MyFunction() {
         const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
+            "July", "August", "September", "October", "November", "December"
+        ];
         var tempDate = new Date();
-        var date = monthNames[tempDate.getMonth()] + ' ' + tempDate.getDate() + ' ' + tempDate.getFullYear()  ;
-        const currDate = "Today is "+date;
+        var date = monthNames[tempDate.getMonth()] + ' ' + tempDate.getDate() + ' ' + tempDate.getFullYear();
+        const currDate = "Today is " + date;
         return (
-          <p>{currDate}</p>
+            <p>{currDate}</p>
         )
     }
 
-  
- 
-       
-  return (
+
+
+
+    return (
 
         <div className="entire-container">
-        
 
-                         <MyFunction />
-             
 
-<div className="welcome-med">
-             Hi, {props.currentUser
-              ?
-              <>
-                <span className="user-render">{props.currentUser.username} </span>
-              </>
-              :
-              <div>
-              </div>
-            }
-        
-             <p className="your-meds">Here are your medications</p>
-             
-             <Clock className="clock"
-          format={'h:mm:ss A'}
-          ticking={true}
-         />    
-       
-             </div>
-             <p className="med-head">Medication</p>
+            <MyFunction />
 
-             <div className="add-med">
-        <Link className="add-medication" to={`/createmedication`}><FontAwesomeIcon className="add-icon" icon={faPlus} />
-</Link>
+
+            <div className="welcome-med">
+                Hi, {props.currentUser
+                    ?
+                    <>
+                        <span className="user-render">{props.currentUser.username} </span>
+                    </>
+                    :
+                    <div>
+                    </div>
+                }
+
+                <p className="your-meds">Here are your medications</p>
+
+                <Clock className="clock"
+                    format={'h:mm:ss A'}
+                    ticking={true}
+                />
+
+            </div>
+            <p className="med-head">Medication</p>
+
+            <div className="add-med">
+                <Link className="add-medication" to={`/createmedication`}><FontAwesomeIcon className="add-icon" icon={faPlus} />
+                </Link>
+            </div>
+
+            <div className="med-map-container" >
+
+                {props.medications.map(medication => (
+                    <div
+                        key={medication.id}
+                        className="med"
+                        onClick={(e) => {
+
+                        }}>
+                        <p className="med-time">{medication.time}</p>
+                        <p className="med-name">{medication.brand_name} {medication.dosage}</p>
+
+
+                        <p className="take-container"> <Popup className="pop"
+                            trigger={<button className="take" onClick={() => {
+
+                                props.takeMed()
+                            }}> take </button>}
+                            modal
+                            closeOnDocumentClick
+                        >
+                            <p className="pop-ty"> Thank you for taking your medication today! </p>
+                        </Popup></p>
+                        {/* <button onClick={() => {
+                            props.takeMed()
+                            props.newFunc(medication)
+                            console.log(props)
+                            }}> test</button> */}
+                        <p className="med-doc">{medication.prescribing_doctor} : {medication.doctor_phone}</p>
+                        <button className="edit-icon" onClick={() => {
+
+                            props.editMeds(medication)
+                            props.history.push(`/editmedication`)
+                        }}><FontAwesomeIcon className="icon" icon={faEdit} />
+                        </button>
+                        <button className="delete-icon" onClick={() => {
+                            props.deleteMedication(medication.id);
+                        }}><FontAwesomeIcon className="icon" icon={faTimes} />
+                        </button>
+
+
+                    </div>
+                ))}
+
+            </div>
+
+
+            <div className="my-pharm">
+                <Link style={{ textDecoration: 'none' }} className="my-pharmacy" to={`/pharmacyview`}>My Pharmacy</Link>
+            </div>
+
+            <div className="add-pharm">
+                <Link className="add-pharmacy" to={`/createpharmacy`}><FontAwesomeIcon className="add-icon" icon={faPlus} />
+                </Link>
+            </div>
+
+
+
+
+
+
+
         </div>
 
-             <div className="med-map-container" >
-                 
-      {props.medications.map(medication => (
-        <div
-          key={medication.id}
-          className="med"
-          onClick={(e) => {
-         
-          }}>
-            <p className="med-time">{medication.time}</p>
-            <p  className="med-name">{medication.brand_name} {medication.dosage}</p>
 
-
-            <p className="take-container"> <Popup className="pop"
-    trigger={<button className="take" onClick={() => {
-
-        props.takeMed()
-      }}> take </button>}
-    modal
-    closeOnDocumentClick
-  >
-    <p className="pop-ty"> Thank you for taking your medication today! </p>
-  </Popup></p>
-  {/* <button onClick={() => {
-props.takeMed()
-props.newFunc(medication)
-console.log(props)
-}}> test</button> */}
-        <p className="med-doc">{medication.prescribing_doctor} : {medication.doctor_phone}</p>
-        <button className="edit-icon" onClick={() => {
-             
-                props.editMeds(medication)
-                  props.history.push(`/editmedication`)
-                }}><FontAwesomeIcon className="icon"icon={faEdit} />
-                </button>
-            <button className="delete-icon" onClick={() => {
-                  props.deleteMedication(medication.id);
-                }}><FontAwesomeIcon className="icon" icon={faTimes} />
-                </button>
-                    
-
-        </div>
-      ))}
-   
-    </div>
-
-
-    <div className="my-pharm">
-        <Link style={{ textDecoration: 'none'}} className="my-pharmacy" to={`/pharmacyview`}>My Pharmacy</Link>
-        </div>
-      
-        <div className="add-pharm">
-        <Link className="add-pharmacy" to={`/createpharmacy`}><FontAwesomeIcon className="add-icon" icon={faPlus} />
-</Link>
-        </div>
-        
-        
-        
-     
-
-        
-   
-        </div>
-
-
-  )
+    )
 }
 
 export default withRouter(MedList);

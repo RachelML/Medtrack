@@ -83,18 +83,18 @@ class App extends Component {
     })
   }
 
- 
+
 
   takeMed = () => {
     var tempDate = new Date();
-    var date = (tempDate.getMonth()+1) + '-' + tempDate.getDate() + '-' + tempDate.getFullYear()  ;
-    const currDate = "last taken: "+date;
+    var date = (tempDate.getMonth() + 1) + '-' + tempDate.getDate() + '-' + tempDate.getFullYear();
+    const currDate = "last taken: " + date;
     this.setState({
       take_time: currDate
-       
+
     });
-   console.log(this.state.take_time)
-}
+    console.log(this.state.take_time)
+  }
 
 
 
@@ -123,7 +123,7 @@ class App extends Component {
 
   newMedication = async (e) => {
     e.preventDefault();
-  
+
     const medication = await createMedication(this.state.medicationForm);
     this.setState(prevState => ({
       medications: [...prevState.medications, medication],
@@ -138,7 +138,7 @@ class App extends Component {
     this.props.history.push("/medlist")
 
   }
-  
+
   deleteMedication = async (id) => {
     await destroyMedication(id);
     this.setState(prevState => ({
@@ -152,45 +152,45 @@ class App extends Component {
       pharmacies: prevState.pharmacies.filter(pharmacy => pharmacy.id !== id)
     }))
   }
-  
+
   editMedication = async (e) => {
     // e.preventDefault()
     let id = e.target.name
     const { medicationForm } = this.state
     let med = await updateMedication(id, medicationForm);
-    
+
     this.setState(
-      {medication: med.data}
+      { medication: med.data }
     )
   }
-//  takeMedication = () => {
-//  console.log(this.state.medicationForm)
-//  }
-//   newFunc = (e) => {
-//     console.log(e)
-//     this.setState({
-//       medicationForm: {
-//         brand_name: e.brand_name,
-//         dosage: e.dosage,
-//         time: e.time,
-//         notes: this.state.take_time,
-//         prescribing_doctor: e.prescribing_doctor,
-//         doctor_phone: e.doctor_phone
-//       }
-//     })
-    // this.setState(prev_state =>({
-    //   medicationForm: {
-    //     ...prev_state.medicationForm,
-    //     notes: this.state.take_time,
-    //   } 
-    // }), this.takeMedication(e) )
-    // console.log(this.state.medicationForm)
+  //  takeMedication = () => {
+  //  console.log(this.state.medicationForm)
+  //  }
+  //   newFunc = (e) => {
+  //     console.log(e)
+  //     this.setState({
+  //       medicationForm: {
+  //         brand_name: e.brand_name,
+  //         dosage: e.dosage,
+  //         time: e.time,
+  //         notes: this.state.take_time,
+  //         prescribing_doctor: e.prescribing_doctor,
+  //         doctor_phone: e.doctor_phone
+  //       }
+  //     })
+  // this.setState(prev_state =>({
+  //   medicationForm: {
+  //     ...prev_state.medicationForm,
+  //     notes: this.state.take_time,
+  //   } 
+  // }), this.takeMedication(e) )
+  // console.log(this.state.medicationForm)
 
   // let id = e.id
   // const { medicationForm } = this.state
   // let med = await updateMedication(id, medicationForm);
-//   this.takeMedication()
-// }
+  //   this.takeMedication()
+  // }
 
   // takeMedication = async (e) => {
   //   e.preventDefault()
@@ -201,19 +201,19 @@ class App extends Component {
   //   this.setState(
   //     {medication: med.data}
   //   )
-    // this.setState(prev_state =>({
-    //   medicationForm: {
-    //     ...prev_state.medicationForm,
-    //     notes: this.state.take_time,
-       
-    //   } 
-    // }), this.newFunc(e) )
-    // this.setState(
-    //   {medication: med.data}
-    // )
-    // return (
-    // <div>{this.state.medicationForm.notes}</div>
-    // )
+  // this.setState(prev_state =>({
+  //   medicationForm: {
+  //     ...prev_state.medicationForm,
+  //     notes: this.state.take_time,
+
+  //   } 
+  // }), this.newFunc(e) )
+  // this.setState(
+  //   {medication: med.data}
+  // )
+  // return (
+  // <div>{this.state.medicationForm.notes}</div>
+  // )
   // }
 
 
@@ -221,17 +221,17 @@ class App extends Component {
   editMeds = (medication) => {
     this.setState({
       submitted: medication
-  })
+    })
   }
 
- 
+
 
   handleLoginButton = () => {
     this.props.history.push("/login")
   }
 
- 
-  
+
+
 
 
   handleRegisterButton = () => {
@@ -243,8 +243,8 @@ class App extends Component {
     this.setState({ currentUser });
     this.props.history.push("/medlist")
     window.location.reload()
-    
-   
+
+
 
 
   }
@@ -254,10 +254,10 @@ class App extends Component {
     e.preventDefault();
     const currentUser = await registerUser(this.state.authFormData);
     this.setState({ currentUser });
-        this.props.history.push("/medlist")
-            window.location.reload();
+    this.props.history.push("/medlist")
+    window.location.reload();
 
-       
+
   }
 
   handleLogout = () => {
@@ -302,15 +302,15 @@ class App extends Component {
   }
 
 
- 
+
   render() {
- 
+
 
     return (
       <div className="App">
         <header className="header">
           <img className="pill" src={logopill} />
-          <h1 className="title-header"><Link style={{ textDecoration: 'none'}} className="title" to='/home' onClick={() => this.setState({
+          <h1 className="title-header"><Link style={{ textDecoration: 'none' }} className="title" to='/home' onClick={() => this.setState({
             pharmacyForm: {
               pharm_name: "",
               address: "",
@@ -321,17 +321,17 @@ class App extends Component {
             {this.state.currentUser
               ?
               <div className="logout-name-combo">
-                <Link style={{ textDecoration: 'none'}} to='/medlist' className="header-name">{this.state.currentUser.username}</Link>
+                <Link style={{ textDecoration: 'none' }} to='/medlist' className="header-name">{this.state.currentUser.username}</Link>
                 <button className="header-logout" onClick={this.handleLogout}>logout</button>
               </div>
               :
               <div className="header-button">
-              <button className="header-login"  onClick={this.handleLoginButton}>Login</button>
-              <button className="header-register"  onClick={this.handleRegisterButton}>Register</button>
+                <button className="header-login" onClick={this.handleLoginButton}>Login</button>
+                <button className="header-register" onClick={this.handleRegisterButton}>Register</button>
               </div>
             }
           </div>
-      
+
         </header>
         <Route exact path="/login" render={() => (
           <Login
@@ -343,7 +343,7 @@ class App extends Component {
             handleRegister={this.handleRegister}
             handleChange={this.authHandleChange}
             formData={this.state.authFormData} />)} />
-            <Route
+        <Route
           path="/createpharmacy"
           render={() => (
             <CreatePharmacy
@@ -351,7 +351,7 @@ class App extends Component {
               pharmacyForm={this.state.pharmacyForm}
               newPharmacy={this.newPharmacy} />
           )} />
-            <Route
+        <Route
           path="/createmedication"
           render={() => (
             <CreateMedication
@@ -361,73 +361,67 @@ class App extends Component {
           )} />
 
 
-{/* EDIT  */}
+        {/* EDIT  */}
         <Route path="/editmedication" render={() => (
-                <EditMedication
-                handleFormChanges={this.handleFormChanges}
-                medicationForm={this.state.medicationForm}
-                editMedication={this.editMedication} 
-                  medication={this.state.submitted}
-                  />
-              )} />
-          
-
-          <Route exact path="/medlist" render={() => (
-               <MedList
-              newFunc={this.newFunc}
-              takeMedication={this.takeMedication}
-              take_time={this.state.take_time}
-              takeMed={this.takeMed}
-              medications={this.state.medications}
-              currentUser={this.state.currentUser}
-              pharmacies={this.state.pharmacies}
-              pharmacyForm={this.state.pharmacyForm}
-              handleFormChange={this.handleFormChange}
-              newPharmacy={this.newPharmacy}
-              newMedication={this.newMedication}
-              handleFormChange={this.handleFormChange}
-              pharmacyForm={this.state.pharmacyForm}
-              newPharmacy={this.newPharmacy}  
-              deleteMedication={this.deleteMedication}
-              editMeds={this.editMeds}
-
-                    />)} />
-          {/* <Route exact path="/createmedication" component={CreateMedication} /> */}
-          {/* <Route exact path="/editmedication" component={EditMedication} /> */}
+          <EditMedication
+            handleFormChanges={this.handleFormChanges}
+            medicationForm={this.state.medicationForm}
+            editMedication={this.editMedication}
+            medication={this.state.submitted}
+          />
+        )} />
 
 
-          {/* <Route exact path="/meddetail" component={MedDetail} /> */}
+        <Route exact path="/medlist" render={() => (
+          <MedList
+            newFunc={this.newFunc}
+            takeMedication={this.takeMedication}
+            take_time={this.state.take_time}
+            takeMed={this.takeMed}
+            medications={this.state.medications}
+            currentUser={this.state.currentUser}
+            pharmacies={this.state.pharmacies}
+            pharmacyForm={this.state.pharmacyForm}
+            handleFormChange={this.handleFormChange}
+            newPharmacy={this.newPharmacy}
+            newMedication={this.newMedication}
+            handleFormChange={this.handleFormChange}
+            pharmacyForm={this.state.pharmacyForm}
+            newPharmacy={this.newPharmacy}
+            deleteMedication={this.deleteMedication}
+            editMeds={this.editMeds}
 
-          <Route
+          />)} />
+        {/* <Route exact path="/createmedication" component={CreateMedication} /> */}
+        {/* <Route exact path="/editmedication" component={EditMedication} /> */}
+
+
+        {/* <Route exact path="/meddetail" component={MedDetail} /> */}
+
+        <Route
           path="/meddetail"
           render={() => (
             <MedDetail
-            deleteMedication={this.deleteMedication}
+              deleteMedication={this.deleteMedication}
             />
           )} />
 
 
-          <Route exact path="/home" render={() => (
+        <Route exact path="/home" render={() => (
           <Home
-          handleLoginButton={this.handleLoginButton}
-          handleRegisterButton={this.handleRegisterButton}
-           />)} />
-                <Route
+            handleLoginButton={this.handleLoginButton}
+            handleRegisterButton={this.handleRegisterButton}
+          />)} />
+        <Route
           path="/pharmacyview"
           render={() => (
             <PharmacyView
-            deletePharmacy={this.deletePharmacy}
-            pharmacies={this.state.pharmacies}
-            pharmacyForm={this.state.pharmacyForm}
-            handleFormChange={this.handleFormChange}
-            newPharmacy={this.newPharmacy} />
+              deletePharmacy={this.deletePharmacy}
+              pharmacies={this.state.pharmacies}
+              pharmacyForm={this.state.pharmacyForm}
+              handleFormChange={this.handleFormChange}
+              newPharmacy={this.newPharmacy} />
           )} />
-
-        
-         
-          
-           
-        
       </div>
     );
   }
