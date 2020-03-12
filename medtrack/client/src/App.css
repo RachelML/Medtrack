@@ -72,7 +72,6 @@ margin-top: 12px;
 }
 
 .add-pharmacy {
-  background-color: yellow;
   border: none;
   margin-left: 13px;
   height:0px
@@ -94,6 +93,24 @@ margin-top: 12px;
   float: left
 }
 
+.take:hover {
+  transform: scale(1.2)
+
+}
+.my-pharm:hover {
+  transform: scale(1.2)
+
+
+}
+
+.add-pharm:hover {
+  transform: scale(1.2)
+
+}
+.add-med:hover {
+  transform: scale(1.2)
+
+}
 .med {
   margin: 0 60px;
   background-color: rgb(109,128,198);
@@ -200,7 +217,7 @@ header {
   width: 80px;
   height: 30px;
   border-radius: 10px;
-  /* margin-left: 10px; */
+  margin-left: 40px;
   border: solid 1px rgb(135,162,206);
 }
 
@@ -491,17 +508,11 @@ to {
 .bottlethree {
   width: 20%;
   margin: 10px;
-
-
-
 }
 
 .bottlefour {
   width: 20%;
-
   margin: 10px;
-
-
 }
 
 .bottle-container {
@@ -514,4 +525,65 @@ margin-top: 130px;
 }
 .slogan{
   font-size: 40px;
+}
+
+.med-map-container {
+  max-width: 800px;
+}
+
+.icon:hover {
+  transform: scale(1.2)
+}
+
+@media only screen and (min-width: 800px) {
+ 
+
+  .welcome-med {
+    width: 400px;
+    margin: auto
+  }
+
+
+  .entire-container {
+    width: 800px;
+    margin: auto
+  }
+
+
+
+
+.header-register {
+  margin: 5px
+}
+
+  /* .my-pharm {
+    text-align: center;
+    width: 180px;
+    height: 90px;
+    margin-top: 30px;
+    border-radius: 10px;
+    background-color: rgb(208,45,65);
+    margin: auto;
+    display: absolute;
+    margin-top: -462px;
+    margin-right: 160px;
+    float: right;
+    margin-bottom: 20px;
+  }
+
+  .add-pharm {
+  
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    margin-top: 30px;
+    border-radius: 100px;
+    background-color: rgb(208,45,65);
+    margin: auto;
+    display: absolute;
+    margin-top: 1300px;
+    margin-right: 225px;
+  
+    float: right
+  } */
 }

@@ -39,6 +39,8 @@ class App extends Component {
         address: "",
         phone_number: "",
       },
+      take_time: "",
+
       medications: [],
       medicationForm: {
         brand_name: "",
@@ -77,6 +79,19 @@ class App extends Component {
       medications
     })
   }
+
+ 
+
+  takeMed() {
+    var tempDate = new Date();
+    var date = (tempDate.getMonth()+1) + '-' + tempDate.getDate() + '-' + tempDate.getFullYear()  ;
+    const currDate = "last taken: "+date;
+    this.setState({
+      take_time: {currDate}
+    });
+
+}
+
 
 
 
@@ -126,6 +141,13 @@ class App extends Component {
       medications: prevState.medications.filter(medication => medication.id !== id)
     }))
   }
+
+  deletePharmacy = async (id) => {
+    await destroyPharmacies(id);
+    this.setState(prevState => ({
+      pharmacies: prevState.pharmacies.filter(pharmacy => pharmacy.id !== id)
+    }))
+  }
   
   editMedication = async (e) => {
     // e.preventDefault()
@@ -163,17 +185,23 @@ class App extends Component {
     const currentUser = await loginUser(this.state.authFormData);
     this.setState({ currentUser });
     this.props.history.push("/medlist")
-    window.location.reload();
+    window.location.reload()
+    
+   
+
 
   }
 
   handleRegister = async (e) => {
+    window.location.reload();
     e.preventDefault();
     const currentUser = await registerUser(this.state.authFormData);
     this.setState({ currentUser });
         this.props.history.push("/medlist")
-        window.location.reload();
-
+        console.log(currentUser)
+        if (currentUser === null ) {
+          alert("test")
+        }
   }
 
   handleLogout = () => {
@@ -290,6 +318,8 @@ class App extends Component {
 
           <Route exact path="/medlist" render={() => (
                <MedList 
+              take_time={this.state.take_time}
+              takeMed={this.takeMed}
               medications={this.state.medications}
               currentUser={this.state.currentUser}
               pharmacies={this.state.pharmacies}
@@ -328,6 +358,7 @@ class App extends Component {
           path="/pharmacyview"
           render={() => (
             <PharmacyView
+            deletePharmacy={this.deletePharmacy}
             pharmacies={this.state.pharmacies}
             pharmacyForm={this.state.pharmacyForm}
             handleFormChange={this.handleFormChange}

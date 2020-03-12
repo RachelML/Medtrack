@@ -53,7 +53,7 @@ class PharmaciesController < ApplicationController
     end
   
     def set_pharmacy
-      # @medication = @current_user.medications.all
+      @pharmacy = Pharmacy.find(params[:id])
     end
 
     # def set_pharmacy

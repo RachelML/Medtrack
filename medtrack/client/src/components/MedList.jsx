@@ -32,21 +32,12 @@ function MedList(props) {
         )
     }
 
-    function LastTaken() {
-        var tempDate = new Date();
-        var date = (tempDate.getMonth()+1) + '-' + tempDate.getDate() + '-' + tempDate.getFullYear()  ;
-        const currDate = "last taken: "+date;
-        return (
-
-            <p>{currDate}</p>
-          )
-
-    }
+  
  
        
   return (
 
-        <div>
+        <div className="entire-container">
         
 
                          <MyFunction />
@@ -78,7 +69,7 @@ function MedList(props) {
 </Link>
         </div>
 
-             <div >
+             <div className="med-map-container" >
                  
       {props.medications.map(medication => (
         <div
@@ -91,14 +82,18 @@ function MedList(props) {
             <p  className="med-name">{medication.brand_name} {medication.dosage}</p>
             <p className="take-container"> <Popup className="pop"
     trigger={<button className="take" onClick={() => {
-LastTaken()
+
+        // -----------------------------------------------------help
+        props.takeMed()
+        console.log(props)
       }}> take </button>}
     modal
     closeOnDocumentClick
   >
     <p className="pop-ty"> Thank you for taking your medication today! </p>
   </Popup></p>
-
+  {/* ---------------------------------help */}
+    <p>{props.take_time}</p>
         <p className="med-doc">{medication.prescribing_doctor} : {medication.doctor_phone}</p>
         <button className="edit-icon" onClick={() => {
                 //   this.setState({

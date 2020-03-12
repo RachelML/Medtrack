@@ -1,6 +1,9 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-//Unauthorized get request
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+
 function PharmacyView(props) {
     console.log(props.pharmacies[0])
 
@@ -15,14 +18,16 @@ function PharmacyView(props) {
         <div 
           key={pharm.id}
           onClick={(e) => {
-            // props.history.push(`/pharmacies/${pharm.id}`);
             window.scrollTo(0, 0);
           }}>
           <div className="pharmacy-view">
             <p className="pharmacy-name">{pharm.pharm_name}</p>
             <p className="pharmacy-address" >address: {pharm.address}</p>
             <p className="pharmacy-phone">phone: {pharm.phone_number}</p>
-          </div>
+            <button className="delete-icon" onClick={() => {
+                  props.deletePharmacy(pharm.id);
+                }}><FontAwesomeIcon className="icon" icon={faTimes} />
+                </button>          </div>
         </div>
       ))}
     
