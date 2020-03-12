@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
+
 
 
 import Popup from "reactjs-popup";
@@ -38,7 +40,6 @@ function MedList(props) {
     return (
 
         <div className="entire-container">
-
 
             <MyFunction />
 
@@ -91,6 +92,8 @@ function MedList(props) {
                             closeOnDocumentClick
                         >
                             <p className="pop-ty"> Thank you for taking your medication today! </p>
+                            <FontAwesomeIcon className="add-check" icon={faCheck} />
+
                         </Popup></p>
                         {/* <button onClick={() => {
                             props.takeMed()

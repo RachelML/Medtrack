@@ -16,6 +16,7 @@ export const loginUser = async (loginData) => {
   return resp.data.user
 }
 export const registerUser = async (registerData) => {
+
   const resp = await api.post('/users/', { user: registerData })
   localStorage.setItem('authToken', resp.data.token);
   api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`
@@ -57,7 +58,6 @@ const createMedication = async (data) => {
     const resp = await api.post('/medications', { medication: data })
     return resp.data
   }
-  
   const readAllMedications = async () => {
     const resp = await api.get('/medications')
     return resp.data

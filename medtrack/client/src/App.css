@@ -7,6 +7,13 @@
   font-family: Sharp Sans No1 Bold
 }
 
+
+.add-check {
+  font-size: 30px;
+  padding: 20px;
+  border-radius: 100%;
+}
+
 .header {
   display: flex;
 
@@ -259,6 +266,10 @@ header {
 
 }
 
+.header-name:hover {
+  color:rgb(245,197,194);
+}
+
 .take {
   height: 40px;
   width: 40px;
@@ -266,7 +277,7 @@ header {
   background-color: rgb(245,197,194);
   color:  rgb(46,58,97);
   border: none;
-  margin-top: 13px
+  margin-top: 63px
 
 
 }
@@ -472,11 +483,11 @@ to {
 
   @keyframes shake {
 from {
-  -webkit-transform: rotate(10deg);
+  transform: rotate(10deg);
 }
 to {
- -webkit-transform-origin:center center;
- -webkit-transform: rotate(-10deg);
+ transform-origin:center center;
+ transform: rotate(-10deg);
 }
 }
 
@@ -484,28 +495,12 @@ to {
   animation: shake 0.1s ease-in-out 0.1s infinite alternate;
 }
 
-  @keyframes shake {
-from {
-  -webkit-transform: rotate(10deg);
-}
-to {
- -webkit-transform-origin:center center;
- -webkit-transform: rotate(-10deg);
-}
-}
+
 .bottlefour:hover{
   animation: shake 0.1s ease-in-out 0.1s infinite alternate;
 }
 
-  @keyframes shake {
-from {
-  -webkit-transform: rotate(10deg);
-}
-to {
- -webkit-transform-origin:center center;
- -webkit-transform: rotate(-10deg);
-}
-}
+
 .bottlethree {
   width: 20%;
   margin: 10px;
@@ -556,6 +551,9 @@ margin-top: 130px;
 .header-register {
   margin: 5px
 }
+
+
+
 
   /* .my-pharm {
     text-align: center;

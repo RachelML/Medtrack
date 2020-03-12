@@ -93,7 +93,6 @@ class App extends Component {
       take_time: currDate
 
     });
-    console.log(this.state.take_time)
   }
 
 
