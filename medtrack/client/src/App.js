@@ -250,15 +250,14 @@ class App extends Component {
   }
 
   handleRegister = async (e) => {
-    window.location.reload();
+    // window.location.reload();
     e.preventDefault();
     const currentUser = await registerUser(this.state.authFormData);
     this.setState({ currentUser });
         this.props.history.push("/medlist")
-        console.log(currentUser)
-        if (currentUser === null ) {
-          alert("test")
-        }
+            window.location.reload();
+
+       
   }
 
   handleLogout = () => {

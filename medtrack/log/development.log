@@ -59965,3 +59965,1292 @@ Processing by PharmaciesController#destroy as HTML
 Completed 204 No Content in 7ms (ActiveRecord: 1.5ms | Allocations: 2824)
 
 
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8120.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "medtrack_development"[0m
+Started POST "/users/" for ::1 at 2020-03-12 11:29:16 -0400
+Started GET "/medications" for ::1 at 2020-03-12 11:29:16 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:29:16 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:29:16 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PharmaciesController#index as HTML
+  [1m[35m (40.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (51.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#verify as HTML
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as HTML
+Processing by MedicationsController#index as HTML
+  Parameters: {"user"=>{"username"=>"Rachel", "email"=>"Rachel", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Load (15.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (16.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 262ms (Views: 0.3ms | ActiveRecord: 256.5ms | Allocations: 14320)
+
+
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 422 Unprocessable Entity in 264ms (Views: 0.1ms | ActiveRecord: 24.1ms | Allocations: 15507)
+
+
+  [1m[36mPharmacy Load (0.4ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 294ms (Views: 1.9ms | ActiveRecord: 275.5ms | Allocations: 23745)
+
+
+  [1m[36mMedication Load (0.4ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 288ms (Views: 19.4ms | ActiveRecord: 253.9ms | Allocations: 28579)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:29:21 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:29:21 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:29:21 -0400
+Processing by MedicationsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mMedication Load (0.4ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 13ms (Views: 5.0ms | ActiveRecord: 6.5ms | Allocations: 3454)
+
+
+  [1m[36mPharmacy Load (7.4ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 5]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 19ms (Views: 1.5ms | ActiveRecord: 13.2ms | Allocations: 3599)
+
+
+  [1m[36mUser Load (22.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 41ms (Views: 0.4ms | ActiveRecord: 29.0ms | Allocations: 4681)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (72.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "medtrack_development"[0m
+  [1m[35m (57.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "medtrack_test"[0m
+  [1m[35m (248.0ms)[0m  [1m[35mCREATE DATABASE "medtrack_development" ENCODING = 'unicode'[0m
+  [1m[35m (78.7ms)[0m  [1m[35mCREATE DATABASE "medtrack_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (7.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "medications" CASCADE[0m
+  [1m[35m (41.6ms)[0m  [1m[35mCREATE TABLE "medications" ("id" bigserial primary key, "brand_name" character varying, "generic_name" character varying, "taken" boolean, "pills_left" integer, "strength" character varying, "dosage" character varying, "notes" character varying, "time" character varying, "with_food" boolean, "prescribing_doctor" character varying, "doctor_phone" character varying, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_medications_on_user_id" ON "medications"  ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "pharmacies" CASCADE[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "pharmacies" ("id" bigserial primary key, "pharm_name" character varying, "address" character varying, "phone_number" character varying, "comment" character varying, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_pharmacies_on_user_id" ON "pharmacies"  ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mALTER TABLE "medications" ADD CONSTRAINT "fk_rails_fc718069ca"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "pharmacies" ADD CONSTRAINT "fk_rails_014c2697df"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200309165537)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200306145520),
+(20200307212633);
+
+[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (4.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-12 15:30:05.937307"], ["updated_at", "2020-03-12 15:30:05.937307"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "aff1692697227b0786df76b8009d31035f5960ec"], ["created_at", "2020-03-12 15:30:05.949228"], ["updated_at", "2020-03-12 15:30:05.949228"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "medications" CASCADE[0m
+  [1m[35m (18.3ms)[0m  [1m[35mCREATE TABLE "medications" ("id" bigserial primary key, "brand_name" character varying, "generic_name" character varying, "taken" boolean, "pills_left" integer, "strength" character varying, "dosage" character varying, "notes" character varying, "time" character varying, "with_food" boolean, "prescribing_doctor" character varying, "doctor_phone" character varying, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_medications_on_user_id" ON "medications"  ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "pharmacies" CASCADE[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "pharmacies" ("id" bigserial primary key, "pharm_name" character varying, "address" character varying, "phone_number" character varying, "comment" character varying, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_pharmacies_on_user_id" ON "pharmacies"  ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mALTER TABLE "medications" ADD CONSTRAINT "fk_rails_fc718069ca"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "pharmacies" ADD CONSTRAINT "fk_rails_014c2697df"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200309165537)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200306145520),
+(20200307212633);
+
+[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-12 15:30:06.039992"], ["updated_at", "2020-03-12 15:30:06.039992"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-03-12 15:30:06.045680"], ["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "aff1692697227b0786df76b8009d31035f5960ec"], ["created_at", "2020-03-12 15:30:06.049620"], ["updated_at", "2020-03-12 15:30:06.049620"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Started POST "/auth/login" for ::1 at 2020-03-12 11:30:28 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"jose", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"jose", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jose"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.4ms | Allocations: 4029)
+
+
+  
+NoMethodError (undefined method `authenticate' for nil:NilClass):
+  
+app/controllers/authentication_controller.rb:7:in `login'
+Started POST "/users/" for ::1 at 2020-03-12 11:30:41 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Rachel", "email"=>"Rachel", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Rachel"], ["email", "Rachel"], ["password_digest", "$2a$12$cCvidtiFwlsfGLV93RvzY.Ie3fv6n6S5TE4uRMWOYlA3az3QKELA2"], ["created_at", "2020-03-12 15:30:42.219834"], ["updated_at", "2020-03-12 15:30:42.219834"]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 200 OK in 254ms (Views: 0.4ms | ActiveRecord: 7.0ms | Allocations: 8623)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:30:42 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:30:42 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:30:42 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1111)
+
+
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 8ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 2200)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Filter chain halted as :authorize_request rendered or redirected
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 3.7ms | Allocations: 808)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-12 11:31:37 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 210ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 929)
+
+
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:31:37 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:31:37 -0400
+Started GET "/medications" for ::1 at 2020-03-12 11:31:37 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by MedicationsController#index as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 2601)
+
+
+  [1m[36mMedication Load (0.9ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 68ms (Views: 7.4ms | ActiveRecord: 12.7ms | Allocations: 8756)
+
+
+  [1m[36mPharmacy Load (0.7ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 69ms (Views: 3.1ms | ActiveRecord: 12.7ms | Allocations: 9529)
+
+
+Started POST "/pharmacies" for ::1 at 2020-03-12 11:32:46 -0400
+Processing by PharmaciesController#create as HTML
+  Parameters: {"pharmacy"=>{"pharm_name"=>"CVS", "address"=>"168 Montague St, Brooklyn, NY 11201", "phone_number"=>"(718) 855-3252"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/pharmacies_controller.rb:24:in `create'
+  [1m[36mPharmacy Create (1.1ms)[0m  [1m[32mINSERT INTO "pharmacies" ("pharm_name", "address", "phone_number", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["pharm_name", "CVS"], ["address", "168 Montague St, Brooklyn, NY 11201"], ["phone_number", "(718) 855-3252"], ["user_id", 1], ["created_at", "2020-03-12 15:32:46.421832"], ["updated_at", "2020-03-12 15:32:46.421832"]]
+  ↳ app/controllers/pharmacies_controller.rb:24:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/pharmacies_controller.rb:24:in `create'
+Completed 201 Created in 23ms (Views: 0.9ms | ActiveRecord: 4.8ms | Allocations: 9358)
+
+
+Started POST "/medications" for ::1 at 2020-03-12 11:34:32 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"medication"=>{"brand_name"=>"Lipitor", "dosage"=>"20 mg", "time"=>"9:00 am", "prescribing_doctor"=>"Dr. Smith", "doctor_phone"=>"(212) 555-1234", "notes"=>"", "updated_at"=>""}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+[31mUnpermitted parameter: :updated_at[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/medications_controller.rb:24:in `create'
+  [1m[36mMedication Create (3.9ms)[0m  [1m[32mINSERT INTO "medications" ("brand_name", "dosage", "notes", "time", "prescribing_doctor", "doctor_phone", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["brand_name", "Lipitor"], ["dosage", "20 mg"], ["notes", ""], ["time", "9:00 am"], ["prescribing_doctor", "Dr. Smith"], ["doctor_phone", "(212) 555-1234"], ["user_id", 1], ["created_at", "2020-03-12 15:34:32.821110"], ["updated_at", "2020-03-12 15:34:32.821110"]]
+  ↳ app/controllers/medications_controller.rb:24:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/medications_controller.rb:24:in `create'
+Completed 201 Created in 52ms (Views: 0.9ms | ActiveRecord: 8.4ms | Allocations: 12069)
+
+
+Started POST "/medications" for ::1 at 2020-03-12 11:35:31 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"medication"=>{"brand_name"=>"Ambien", "dosage"=>"10 mg", "time"=>"10:00am", "prescribing_doctor"=>"Dr. Smith", "doctor_phone"=>"(212) 555-1234"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/medications_controller.rb:24:in `create'
+  [1m[36mMedication Create (1.5ms)[0m  [1m[32mINSERT INTO "medications" ("brand_name", "dosage", "time", "prescribing_doctor", "doctor_phone", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["brand_name", "Ambien"], ["dosage", "10 mg"], ["time", "10:00am"], ["prescribing_doctor", "Dr. Smith"], ["doctor_phone", "(212) 555-1234"], ["user_id", 1], ["created_at", "2020-03-12 15:35:31.979820"], ["updated_at", "2020-03-12 15:35:31.979820"]]
+  ↳ app/controllers/medications_controller.rb:24:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/medications_controller.rb:24:in `create'
+Completed 201 Created in 6ms (Views: 0.4ms | ActiveRecord: 2.1ms | Allocations: 3263)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-12 11:35:56 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 216ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 895)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:35:56 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:35:56 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:35:56 -0400
+Processing by MedicationsController#index as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mMedication Load (8.7ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 16ms (Views: 3.6ms | ActiveRecord: 10.5ms | Allocations: 3107)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (21.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 24ms (Views: 0.4ms | ActiveRecord: 21.7ms | Allocations: 819)
+
+
+  [1m[36mPharmacy Load (25.3ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 43ms (Views: 12.7ms | ActiveRecord: 28.7ms | Allocations: 5082)
+
+
+Started PUT "/medications/1" for ::1 at 2020-03-12 11:36:33 -0400
+Processing by MedicationsController#update as HTML
+  Parameters: {"medication"=>{"brand_name"=>"Lipitor", "dosage"=>"50 mg", "time"=>"9:00 am", "prescribing_doctor"=>"Dr. Smith", "doctor_phone"=>"(212) 555-1234", "notes"=>"", "updated_at"=>""}, "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mMedication Load (21.7ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/medications_controller.rb:59:in `set_medication'
+[31mUnpermitted parameter: :updated_at[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/medications_controller.rb:33:in `update'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/medications_controller.rb:33:in `update'
+  [1m[36mMedication Update (11.7ms)[0m  [1m[33mUPDATE "medications" SET "dosage" = $1, "updated_at" = $2 WHERE "medications"."id" = $3[0m  [["dosage", "50 mg"], ["updated_at", "2020-03-12 15:36:33.549677"], ["id", 1]]
+  ↳ app/controllers/medications_controller.rb:33:in `update'
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/medications_controller.rb:33:in `update'
+Completed 200 OK in 76ms (Views: 0.4ms | ActiveRecord: 38.7ms | Allocations: 4948)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:36:33 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:36:33 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:36:33 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by PharmaciesController#index as HTML
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMedication Load (6.2ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 15ms (Views: 4.0ms | ActiveRecord: 7.3ms | Allocations: 4025)
+
+
+  [1m[36mPharmacy Load (2.6ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 4.6ms | Allocations: 3500)
+
+
+Completed 200 OK in 14ms (Views: 6.2ms | ActiveRecord: 5.7ms | Allocations: 4153)
+
+
+Started POST "/users/" for ::1 at 2020-03-12 11:36:46 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"Tyler", "email"=>"Tyler", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Started GET "/medications" for ::1 at 2020-03-12 11:36:47 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:36:47 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:36:47 -0400
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Tyler"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Processing by MedicationsController#index as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Tyler"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mPharmacy Load (1.2ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Tyler"], ["email", "Tyler"], ["password_digest", "$2a$12$0iZuAFJ08bw4YoQMOhrE2uILyL7GEzCfGJJX.cBQwQmjvPgpzfjfi"], ["created_at", "2020-03-12 15:36:47.071052"], ["updated_at", "2020-03-12 15:36:47.071052"]]
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 2.5ms | Allocations: 3290)
+
+
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mMedication Load (1.8ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 2.5ms | ActiveRecord: 3.6ms | Allocations: 5590)
+
+
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 200 OK in 275ms (Views: 0.2ms | ActiveRecord: 4.4ms | Allocations: 10561)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 902)
+
+
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:36:52 -0400
+Started GET "/medications" for ::1 at 2020-03-12 11:36:52 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:36:52 -0400
+Processing by PharmaciesController#index as HTML
+Processing by MedicationsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMedication Load (0.5ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+  [1m[36mPharmacy Load (2.5ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 12ms (Views: 4.3ms | ActiveRecord: 4.1ms | Allocations: 3494)
+
+
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 3.4ms | Allocations: 2114)
+
+
+Completed 200 OK in 16ms (Views: 8.9ms | ActiveRecord: 3.6ms | Allocations: 4932)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:37:55 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:37:55 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:37:55 -0400
+Processing by MedicationsController#index as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by AuthenticationController#verify as HTML
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 4.4ms | Allocations: 1370)
+
+
+  [1m[36mMedication Load (3.7ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 21ms (Views: 10.2ms | ActiveRecord: 6.0ms | Allocations: 4364)
+
+
+  [1m[36mPharmacy Load (33.9ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 47ms (Views: 2.7ms | ActiveRecord: 40.5ms | Allocations: 5219)
+
+
+Started POST "/users/" for ::1 at 2020-03-12 11:38:49 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"cvb", "email"=>"cvb", "password"=>"[FILTERED]"}}
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:38:49 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:38:49 -0400
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Started GET "/medications" for ::1 at 2020-03-12 11:38:49 -0400
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "cvb"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cvb"], ["LIMIT", 1]]
+Processing by MedicationsController#index as HTML
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 4.5ms | Allocations: 3367)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "cvb"], ["email", "cvb"], ["password_digest", "$2a$12$C90oYuA75YIxg32XS6fL0.sWpp.OhsAcxmjcnk.QU2bXVaF6yQpqq"], ["created_at", "2020-03-12 15:38:49.476588"], ["updated_at", "2020-03-12 15:38:49.476588"]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mMedication Load (5.2ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+  [1m[36mPharmacy Load (2.8ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 14ms (Views: 2.3ms | ActiveRecord: 8.1ms | Allocations: 3971)
+
+
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 18ms (Views: 7.9ms | ActiveRecord: 3.7ms | Allocations: 6511)
+
+
+  [1m[35m (26.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 200 OK in 286ms (Views: 0.6ms | ActiveRecord: 33.8ms | Allocations: 11582)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:39:15 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:39:15 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:39:15 -0400
+Processing by PharmaciesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by MedicationsController#index as HTML
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 5.6ms | Allocations: 2086)
+
+
+  [1m[36mPharmacy Load (3.4ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 12ms (Views: 3.6ms | ActiveRecord: 4.4ms | Allocations: 3568)
+
+
+  [1m[36mMedication Load (2.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 12ms (Views: 2.6ms | ActiveRecord: 5.6ms | Allocations: 4174)
+
+
+Started POST "/users/" for ::1 at 2020-03-12 11:39:25 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"xcv", "email"=>"xcv", "password"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:39:26 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:39:26 -0400
+Started GET "/medications" for ::1 at 2020-03-12 11:39:26 -0400
+Processing by PharmaciesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+Processing by MedicationsController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (7.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "xcv"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mPharmacy Load (1.2ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "xcv"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 2.2ms | Allocations: 3027)
+
+
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 13ms (Views: 5.0ms | ActiveRecord: 3.8ms | Allocations: 5759)
+
+
+  [1m[36mMedication Load (2.2ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 13ms (Views: 2.8ms | ActiveRecord: 3.6ms | Allocations: 6185)
+
+
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "xcv"], ["email", "xcv"], ["password_digest", "$2a$12$n9PsKoeOSJufCqC0TeE3V.sw2I8LriO9G8rr6prVp5BRd5IcTtXk2"], ["created_at", "2020-03-12 15:39:26.208324"], ["updated_at", "2020-03-12 15:39:26.208324"]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (16.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 200 OK in 264ms (Views: 0.5ms | ActiveRecord: 25.4ms | Allocations: 11558)
+
+
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:39:28 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:39:28 -0400
+Started GET "/medications" for ::1 at 2020-03-12 11:39:28 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by MedicationsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 2301)
+
+
+  [1m[36mPharmacy Load (1.6ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 2.8ms | Allocations: 3342)
+
+
+  [1m[36mMedication Load (1.1ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 10ms (Views: 3.1ms | ActiveRecord: 2.8ms | Allocations: 4174)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:39:29 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:39:29 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:39:29 -0400
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by AuthenticationController#verify as HTML
+Processing by MedicationsController#index as HTML
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mPharmacy Load (0.7ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 1265)
+
+
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 1.0ms | Allocations: 3290)
+
+
+  [1m[36mMedication Load (1.4ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 12ms (Views: 3.8ms | ActiveRecord: 2.7ms | Allocations: 4174)
+
+
+Started POST "/users/" for ::1 at 2020-03-12 11:40:07 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"zxc", "email"=>"zxc", "password"=>"[FILTERED]"}}
+Started GET "/medications" for ::1 at 2020-03-12 11:40:07 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:40:07 -0400
+  [1m[35m (3.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:40:07 -0400
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "zxc"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Processing by MedicationsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "zxc"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Processing by AuthenticationController#verify as HTML
+  [1m[36mMedication Load (2.6ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 3.3ms | Allocations: 3755)
+
+
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 2.5ms | Allocations: 2437)
+
+
+  [1m[36mUser Create (4.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "zxc"], ["email", "zxc"], ["password_digest", "$2a$12$C4HM5J/c7YHz5Um.C5dimuULnTs6a0ivWmeUK/h8FUIIAIjwPjF76"], ["created_at", "2020-03-12 15:40:07.496931"], ["updated_at", "2020-03-12 15:40:07.496931"]]
+  [1m[36mPharmacy Load (2.2ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 14ms (Views: 3.0ms | ActiveRecord: 3.6ms | Allocations: 7762)
+
+
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 200 OK in 245ms (Views: 0.2ms | ActiveRecord: 14.5ms | Allocations: 11578)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:40:16 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:40:16 -0400
+Processing by MedicationsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:40:16 -0400
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Processing by AuthenticationController#verify as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mMedication Load (4.2ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.7ms | Allocations: 1009)
+
+
+Completed 200 OK in 15ms (Views: 4.4ms | ActiveRecord: 5.7ms | Allocations: 4677)
+
+
+  [1m[36mPharmacy Load (15.0ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 23ms (Views: 2.3ms | ActiveRecord: 16.4ms | Allocations: 3944)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:40:17 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:40:17 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:40:17 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by MedicationsController#index as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 2016)
+
+
+  [1m[36mMedication Load (0.9ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 1.6ms | Allocations: 3680)
+
+
+  [1m[36mPharmacy Load (1.9ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 9ms (Views: 2.0ms | ActiveRecord: 4.2ms | Allocations: 4573)
+
+
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:43:08 -0400
+Started GET "/medications" for ::1 at 2020-03-12 11:43:08 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:43:08 -0400
+Processing by MedicationsController#index as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Processing by AuthenticationController#verify as HTML
+  [1m[36mMedication Load (1.8ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 23ms (Views: 10.4ms | ActiveRecord: 4.3ms | Allocations: 3527)
+
+
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 7.0ms | Allocations: 2180)
+
+
+  [1m[36mPharmacy Load (16.7ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 30ms (Views: 2.3ms | ActiveRecord: 18.8ms | Allocations: 5057)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:45:35 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:45:35 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:45:35 -0400
+Processing by PharmaciesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+Processing by MedicationsController#index as HTML
+  [1m[36mUser Load (47.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (49.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPharmacy Load (1.3ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 58ms (Views: 4.4ms | ActiveRecord: 48.6ms | Allocations: 3224)
+
+
+  [1m[36mUser Load (65.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mMedication Load (11.8ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+Completed 200 OK in 70ms (Views: 0.9ms | ActiveRecord: 65.5ms | Allocations: 3722)
+
+
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 72ms (Views: 7.2ms | ActiveRecord: 61.3ms | Allocations: 4605)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:45:37 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:45:37 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:45:37 -0400
+Processing by MedicationsController#index as HTML
+Processing by PharmaciesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (18.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mMedication Load (43.1ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 46ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 1899)
+
+
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 69ms (Views: 4.8ms | ActiveRecord: 61.2ms | Allocations: 4441)
+
+
+  [1m[36mPharmacy Load (2.1ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 53ms (Views: 2.1ms | ActiveRecord: 4.8ms | Allocations: 5060)
+
+
+Started POST "/users/" for ::1 at 2020-03-12 11:45:46 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"bnm", "email"=>"bnm", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "bnm"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bnm"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "bnm"], ["email", "bnm"], ["password_digest", "$2a$12$FgeEJTj.rZTsLh69ztYB4e0NNzsjX4Ql9KP7kL8s4LTRAMfB1rkb6"], ["created_at", "2020-03-12 15:45:46.332430"], ["updated_at", "2020-03-12 15:45:46.332430"]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 200 OK in 225ms (Views: 0.3ms | ActiveRecord: 5.5ms | Allocations: 4446)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:45:58 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:45:58 -0400
+Processing by MedicationsController#index as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:45:58 -0400
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mMedication Load (7.6ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mPharmacy Load (7.4ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 6]]
+Processing by AuthenticationController#verify as HTML
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 14ms (Views: 3.2ms | ActiveRecord: 7.7ms | Allocations: 3465)
+
+
+Completed 200 OK in 15ms (Views: 4.7ms | ActiveRecord: 8.3ms | Allocations: 3887)
+
+
+  [1m[36mUser Load (42.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 45ms (Views: 0.4ms | ActiveRecord: 42.9ms | Allocations: 1445)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:46:04 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:46:04 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:46:04 -0400
+Processing by MedicationsController#index as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 1509)
+
+
+  [1m[36mMedication Load (3.4ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 12ms (Views: 4.8ms | ActiveRecord: 5.0ms | Allocations: 3964)
+
+
+  [1m[36mPharmacy Load (4.7ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 6]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 12ms (Views: 1.8ms | ActiveRecord: 8.4ms | Allocations: 4121)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-12 11:46:15 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 209ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 895)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:46:16 -0400
+Processing by MedicationsController#index as HTML
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:46:16 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:46:16 -0400
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Processing by PharmaciesController#index as HTML
+  [1m[36mMedication Load (0.9ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 11ms (Views: 5.1ms | ActiveRecord: 3.0ms | Allocations: 3776)
+
+
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 7.5ms | Allocations: 2223)
+
+
+  [1m[36mPharmacy Load (22.1ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 32ms (Views: 4.0ms | ActiveRecord: 23.4ms | Allocations: 4415)
+
+
+Started POST "/users/" for ::1 at 2020-03-12 11:46:37 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"ml", "email"=>"ml", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Started GET "/medications" for ::1 at 2020-03-12 11:46:37 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:46:37 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:46:37 -0400
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Exists? (4.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ml"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Processing by MedicationsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ml"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mPharmacy Load (2.3ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 9ms (Views: 1.8ms | ActiveRecord: 3.9ms | Allocations: 4474)
+
+
+  [1m[36mUser Create (3.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "ml"], ["email", "ml"], ["password_digest", "$2a$12$hFtrXqsJt8lJaWsvI0p4Ce4AtLNRbmsh7mBJgWh2zQYSQVdkJw27K"], ["created_at", "2020-03-12 15:46:37.782669"], ["updated_at", "2020-03-12 15:46:37.782669"]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mMedication Load (2.6ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 10ms (Views: 3.1ms | ActiveRecord: 3.2ms | Allocations: 5360)
+
+
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 200 OK in 251ms (Views: 0.2ms | ActiveRecord: 17.3ms | Allocations: 10549)
+
+
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 22ms (Views: 0.8ms | ActiveRecord: 0.9ms | Allocations: 901)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:46:40 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:46:40 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:46:40 -0400
+Processing by MedicationsController#index as HTML
+Processing by AuthenticationController#verify as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.9ms | Allocations: 1439)
+
+
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mPharmacy Load (0.3ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 8ms (Views: 1.3ms | ActiveRecord: 0.7ms | Allocations: 3216)
+
+
+  [1m[36mMedication Load (8.6ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 17ms (Views: 2.3ms | ActiveRecord: 10.8ms | Allocations: 4929)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:46:46 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:46:46 -0400
+Processing by MedicationsController#index as HTML
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:46:46 -0400
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1682)
+
+
+  [1m[36mPharmacy Load (5.1ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 19ms (Views: 10.4ms | ActiveRecord: 6.1ms | Allocations: 3570)
+
+
+  [1m[36mMedication Load (4.1ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 26ms (Views: 14.7ms | ActiveRecord: 6.2ms | Allocations: 5541)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:46:51 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:46:51 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:46:51 -0400
+Processing by MedicationsController#index as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Processing by AuthenticationController#verify as HTML
+  [1m[36mMedication Load (4.3ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 2.3ms | ActiveRecord: 4.9ms | Allocations: 3599)
+
+
+  [1m[36mPharmacy Load (2.0ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.3ms | Allocations: 3093)
+
+
+Completed 200 OK in 12ms (Views: 5.4ms | ActiveRecord: 3.0ms | Allocations: 4839)
+
+
+Started POST "/users/" for ::1 at 2020-03-12 11:47:05 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"asd", "email"=>"asd", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "asd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "asd"], ["email", "asd"], ["password_digest", "$2a$12$9Ws4JXkb55FNvbskas3gBONP8/mfDWRV9PhOOHRKZBVW3Rp23PMTm"], ["created_at", "2020-03-12 15:47:05.609840"], ["updated_at", "2020-03-12 15:47:05.609840"]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 200 OK in 212ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 4462)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:47:08 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:47:08 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:47:08 -0400
+Processing by AuthenticationController#verify as HTML
+Processing by PharmaciesController#index as HTML
+Processing by MedicationsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 1754)
+
+
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mPharmacy Load (1.1ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+  [1m[36mMedication Load (0.9ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 8]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 1.7ms | Allocations: 3222)
+
+
+Completed 200 OK in 7ms (Views: 2.0ms | ActiveRecord: 2.0ms | Allocations: 3778)
+
+
+Started POST "/medications" for ::1 at 2020-03-12 11:47:22 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"medication"=>{"brand_name"=>"test", "dosage"=>"", "time"=>"", "prescribing_doctor"=>"", "doctor_phone"=>"", "notes"=>"", "updated_at"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+[31mUnpermitted parameter: :updated_at[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/medications_controller.rb:24:in `create'
+  [1m[36mMedication Create (9.2ms)[0m  [1m[32mINSERT INTO "medications" ("brand_name", "dosage", "notes", "time", "prescribing_doctor", "doctor_phone", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["brand_name", "test"], ["dosage", ""], ["notes", ""], ["time", ""], ["prescribing_doctor", ""], ["doctor_phone", ""], ["user_id", 8], ["created_at", "2020-03-12 15:47:22.138542"], ["updated_at", "2020-03-12 15:47:22.138542"]]
+  ↳ app/controllers/medications_controller.rb:24:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/medications_controller.rb:24:in `create'
+Completed 201 Created in 16ms (Views: 0.4ms | ActiveRecord: 9.8ms | Allocations: 3325)
+
+
+Started POST "/users/" for ::1 at 2020-03-12 11:47:30 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"qwe", "email"=>"qwe", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "qwe"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "qwe"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "qwe"], ["email", "qwe"], ["password_digest", "$2a$12$k1Y1ZXq2hsH/0MWtHAf6L.iD7tuRkdG8Gv/fKHa0JzZxcrEoLVPnG"], ["created_at", "2020-03-12 15:47:30.460329"], ["updated_at", "2020-03-12 15:47:30.460329"]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 200 OK in 211ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 4441)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:47:32 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:47:32 -0400
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mMedication Load (0.3ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Processing by PharmaciesController#index as HTML
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.9ms | Allocations: 2174)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:47:32 -0400
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Processing by AuthenticationController#verify as HTML
+  [1m[36mPharmacy Load (2.2ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 9]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.4ms | Allocations: 1444)
+
+
+Completed 200 OK in 8ms (Views: 3.3ms | ActiveRecord: 2.9ms | Allocations: 3217)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:47:49 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:47:49 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:47:49 -0400
+Processing by MedicationsController#index as HTML
+Processing by PharmaciesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 2139)
+
+
+  [1m[36mPharmacy Load (4.9ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 9]]
+  [1m[36mMedication Load (4.3ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 11ms (Views: 2.6ms | ActiveRecord: 5.7ms | Allocations: 3848)
+
+
+Completed 200 OK in 12ms (Views: 2.6ms | ActiveRecord: 5.6ms | Allocations: 4421)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:47:52 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:47:52 -0400
+  [1m[36mMedication Load (4.0ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 9]]
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:47:52 -0400
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 4.1ms | Allocations: 2203)
+
+
+Processing by PharmaciesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 2.1ms | Allocations: 1448)
+
+
+  [1m[36mPharmacy Load (2.4ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 9]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 2.9ms | Allocations: 2852)
+
+
+Started POST "/medications" for ::1 at 2020-03-12 11:47:59 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"medication"=>{"brand_name"=>"test", "dosage"=>"", "time"=>"", "prescribing_doctor"=>"", "doctor_phone"=>"", "notes"=>"", "updated_at"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+[31mUnpermitted parameter: :updated_at[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/medications_controller.rb:24:in `create'
+  [1m[36mMedication Create (0.9ms)[0m  [1m[32mINSERT INTO "medications" ("brand_name", "dosage", "notes", "time", "prescribing_doctor", "doctor_phone", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["brand_name", "test"], ["dosage", ""], ["notes", ""], ["time", ""], ["prescribing_doctor", ""], ["doctor_phone", ""], ["user_id", 9], ["created_at", "2020-03-12 15:47:59.394141"], ["updated_at", "2020-03-12 15:47:59.394141"]]
+  ↳ app/controllers/medications_controller.rb:24:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/medications_controller.rb:24:in `create'
+Completed 201 Created in 6ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 3325)
+
+
+Started POST "/users/" for ::1 at 2020-03-12 11:48:16 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"afg", "email"=>"afg", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "afg"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "afg"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "afg"], ["email", "afg"], ["password_digest", "$2a$12$Fg3LqmGqLJAgAtR0wJAfp.5S4G5nCgshZ.ckgWm.kK6ok5yc1Et5C"], ["created_at", "2020-03-12 15:48:16.802678"], ["updated_at", "2020-03-12 15:48:16.802678"]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 200 OK in 219ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 4444)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:48:16 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:48:16 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:48:16 -0400
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Processing by PharmaciesController#index as HTML
+  [1m[36mMedication Load (0.8ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 10]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+Processing by AuthenticationController#verify as HTML
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 1.2ms | Allocations: 2683)
+
+
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mPharmacy Load (1.0ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 10]]
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 1273)
+
+
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 7ms (Views: 2.0ms | ActiveRecord: 2.3ms | Allocations: 3777)
+
+
+Started POST "/medications" for ::1 at 2020-03-12 11:48:29 -0400
+Processing by MedicationsController#create as HTML
+  Parameters: {"medication"=>{"brand_name"=>"aefesg", "dosage"=>"", "time"=>"", "prescribing_doctor"=>"", "doctor_phone"=>"", "notes"=>"", "updated_at"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+[31mUnpermitted parameter: :updated_at[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/medications_controller.rb:24:in `create'
+  [1m[36mMedication Create (1.0ms)[0m  [1m[32mINSERT INTO "medications" ("brand_name", "dosage", "notes", "time", "prescribing_doctor", "doctor_phone", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["brand_name", "aefesg"], ["dosage", ""], ["notes", ""], ["time", ""], ["prescribing_doctor", ""], ["doctor_phone", ""], ["user_id", 10], ["created_at", "2020-03-12 15:48:29.501807"], ["updated_at", "2020-03-12 15:48:29.501807"]]
+  ↳ app/controllers/medications_controller.rb:24:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/medications_controller.rb:24:in `create'
+Completed 201 Created in 7ms (Views: 0.4ms | ActiveRecord: 1.7ms | Allocations: 3325)
+
+
+Started POST "/users/" for ::1 at 2020-03-12 11:48:43 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"ert", "email"=>"ert", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ert"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ert"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "ert"], ["email", "ert"], ["password_digest", "$2a$12$SB.UoyjLbew3P7Ug9NncOerSan0afTEZfg5dcbmbpEcONpXYFXzSG"], ["created_at", "2020-03-12 15:48:43.398359"], ["updated_at", "2020-03-12 15:48:43.398359"]]
+  ↳ app/controllers/users_controller.rb:22:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `create'
+Completed 200 OK in 215ms (Views: 0.3ms | ActiveRecord: 2.4ms | Allocations: 4442)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:48:43 -0400
+Processing by MedicationsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:48:43 -0400
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:48:43 -0400
+  [1m[36mMedication Load (1.4ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 1.6ms | Allocations: 2225)
+
+
+Processing by PharmaciesController#index as HTML
+Processing by AuthenticationController#verify as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1479)
+
+
+  [1m[36mPharmacy Load (1.2ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 11]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 7ms (Views: 2.1ms | ActiveRecord: 2.0ms | Allocations: 2563)
+
+
+Started POST "/auth/login" for ::1 at 2020-03-12 11:48:52 -0400
+Processing by AuthenticationController#login as HTML
+  Parameters: {"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]", "authentication"=>{"username"=>"Rachel", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Rachel"], ["LIMIT", 1]]
+  ↳ app/controllers/authentication_controller.rb:6:in `login'
+Completed 200 OK in 207ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/medications" for ::1 at 2020-03-12 11:48:52 -0400
+Processing by MedicationsController#index as HTML
+Started GET "/pharmacies" for ::1 at 2020-03-12 11:48:52 -0400
+Started GET "/auth/verify" for ::1 at 2020-03-12 11:48:52 -0400
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Processing by AuthenticationController#verify as HTML
+Processing by PharmaciesController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+  [1m[36mMedication Load (4.3ms)[0m  [1m[34mSELECT "medications".* FROM "medications" WHERE "medications"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `authorize_request'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 2.5ms | Allocations: 1725)
+
+
+  ↳ app/controllers/medications_controller.rb:12:in `index'
+  [1m[36mPharmacy Load (0.4ms)[0m  [1m[34mSELECT "pharmacies".* FROM "pharmacies" WHERE "pharmacies"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/pharmacies_controller.rb:10:in `index'
+Completed 200 OK in 14ms (Views: 4.4ms | ActiveRecord: 7.4ms | Allocations: 5127)
+
+
+Completed 200 OK in 8ms (Views: 3.3ms | ActiveRecord: 2.0ms | Allocations: 3760)
+
+
