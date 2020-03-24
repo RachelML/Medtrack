@@ -132,14 +132,3 @@ MEDICATION component CRUD functionality
 - change password in user auth
 - Oauth
 
-## Project Change Log
-
-> This section should be expanded and revised as you work on your project.
-
-## Code Showcase
-
-> Use this section to include a brief code snippet of functionality that you are proud of and a brief description.
-
-## Code Issues & Resolutions
-
-> Use this section to list of all major issues encountered and their resolution, if you'd like.
